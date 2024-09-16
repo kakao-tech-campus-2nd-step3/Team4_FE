@@ -1,5 +1,7 @@
+import { ChakraProvider } from '@chakra-ui/react';
+
 function App() {
-  return <div className='App'>LINKFIT 시작</div>;
+  return <ChakraProvider></ChakraProvider>;
 }
 
 export default App;
