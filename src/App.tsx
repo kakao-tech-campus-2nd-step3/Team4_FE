@@ -1,7 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react';
+import { Routes } from './routes';
 
 function App() {
-  return <ChakraProvider>안녕</ChakraProvider>;
+  return (
+    <ChakraProvider>
+      <Routes />
+    </ChakraProvider>
+  );
 }
 
 export default App;
