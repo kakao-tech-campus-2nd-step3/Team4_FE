@@ -43,7 +43,7 @@ const Logo = styled.img`
 `;
 
 const StyledLink = styled(Link)`
-  font-size: 12px; /* 원하는 사이즈로 조정 */
+  font-size: 12px;
   margin: 0 5px;
   text-decoration: none;
   color: black;
