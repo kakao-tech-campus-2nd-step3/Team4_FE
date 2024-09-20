@@ -3,16 +3,19 @@ import { ChatIcon } from '@chakra-ui/icons';
 import LogoImage from '@/assets/linkfit_logo.png';
 import { Link } from 'react-router-dom';
 import { Text } from '@chakra-ui/react';
+import { RouterPath } from '@/routes/path';
 
 export const Header = () => {
   return (
     <Wrapper>
       <ChatIcon />
-      <Logo src={LogoImage} alt='logo' />
+      <Link to={RouterPath.home}>
+        <Logo src={LogoImage} alt='logo' />
+      </Link>
       <UserWrapper>
         <StyledLink to='/login'>로그인</StyledLink>
         <Text fontSize='xs'>/</Text>
-        <StyledLink to='/signup'>회원가입</StyledLink>
+        <StyledLink to='/signup/type'>회원가입</StyledLink>
       </UserWrapper>
     </Wrapper>
   );
