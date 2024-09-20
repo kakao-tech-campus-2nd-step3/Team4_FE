@@ -3,4 +3,6 @@ export const RouterPath = {
   home: '/',
   login: '/login',
   signupType: '/signup/type',
+  signupUser: '/signup/user',
+  signupTrainer: '/signup/trainer',
 };
