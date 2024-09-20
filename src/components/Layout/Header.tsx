@@ -8,7 +8,7 @@ import { RouterPath } from '@/routes/path';
 export const Header = () => {
   return (
     <Wrapper>
-      <ChatIcon />
+      <StyledChatIcon />
       <Link to={RouterPath.home}>
         <Logo src={LogoImage} alt='logo' />
       </Link>
@@ -38,6 +38,10 @@ export const Wrapper = styled.header`
 const UserWrapper = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const StyledChatIcon = styled(ChatIcon)`
+  margin-right: 65px;
 `;
 
 const Logo = styled.img`
