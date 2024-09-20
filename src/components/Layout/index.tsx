@@ -12,9 +12,10 @@ export const Layout = () => (
 );
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 70%;
   position: relative;
   min-height: 100vh;
+  margin: 0 auto;
 `;
 
 const InnerWrapper = styled.div`
