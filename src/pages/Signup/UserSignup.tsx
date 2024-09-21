@@ -1,11 +1,4 @@
-import {
-  Text,
-  Input,
-  FormControl,
-  FormLabel,
-  Button,
-  Select,
-} from '@chakra-ui/react';
+import { Text, Input, FormControl, FormLabel, Button } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const UserSignupPage = () => {
