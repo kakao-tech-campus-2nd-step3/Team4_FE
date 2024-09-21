@@ -5,6 +5,7 @@ import { SignupType } from '@/pages/SignupType';
 import { Layout } from '@/components/Layout';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
 import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
+import { LoginPage } from '@/pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.home,
         element: <HomePage />,
+      },
+      {
+        path: RouterPath.login,
+        element: <LoginPage />,
       },
       {
         path: RouterPath.signupType,
