@@ -4,6 +4,7 @@ import LogoImage from '@/assets/linkfit_logo.png';
 import { Link } from 'react-router-dom';
 import { Text } from '@chakra-ui/react';
 import { RouterPath } from '@/routes/path';
+import Z_INDEX from '@/styles/z-index';
 
 export const Header = () => {
   return (
@@ -27,7 +28,7 @@ export const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 9999;
+  z-index: ${Z_INDEX.header};
   width: 100%;
   max-width: 100vw;
   height: ${HEADER_HEIGHT};
