@@ -13,9 +13,9 @@ export const Header = () => {
         <Logo src={LogoImage} alt='logo' />
       </Link>
       <UserWrapper>
-        <StyledLink to='/login'>로그인</StyledLink>
+        <StyledLink to={RouterPath.login}>로그인</StyledLink>
         <Text fontSize='xs'>/</Text>
-        <StyledLink to='/signup'>회원가입</StyledLink>
+        <StyledLink to={RouterPath.signup}>회원가입</StyledLink>
       </UserWrapper>
     </Wrapper>
   );

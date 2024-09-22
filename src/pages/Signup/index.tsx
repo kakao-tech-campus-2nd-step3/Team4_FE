@@ -1,3 +1,4 @@
+import { RouterPath } from '@/routes/path';
 import { Card, CardBody, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,7 @@ export const SignupPage = () => {
         </TitleText>
         <TypeWrapper>
           <CardWrapper>
-            <Link to='/signup/user'>
+            <Link to={RouterPath.signupUser}>
               <CardBody>
                 <EmojiText>🙋‍♂️</EmojiText>
                 <RoleText>일반 회원</RoleText>
@@ -21,7 +22,7 @@ export const SignupPage = () => {
           </CardWrapper>
 
           <CardWrapper>
-            <Link to='/signup/trainer'>
+            <Link to={RouterPath.signupTrainer}>
               <CardBody>
                 <EmojiText>💪</EmojiText>
                 <RoleText>트레이너 회원</RoleText>
