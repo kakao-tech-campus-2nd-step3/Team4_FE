@@ -15,7 +15,7 @@ export const Header = () => {
       <UserWrapper>
         <StyledLink to='/login'>로그인</StyledLink>
         <Text fontSize='xs'>/</Text>
-        <StyledLink to='/signup/type'>회원가입</StyledLink>
+        <StyledLink to='/signup'>회원가입</StyledLink>
       </UserWrapper>
     </Wrapper>
   );
