@@ -24,7 +24,7 @@ export const Header = () => {
 
 export const HEADER_HEIGHT = '54px';
 
-export const Wrapper = styled.header`
+const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
