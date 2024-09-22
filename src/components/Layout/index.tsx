@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import { Outlet } from 'react-router-dom';
-import { Header, HEADER_HEIGHT } from './Header';
+import { Header } from './Header';
+import { Wrapper, InnerWrapper } from './index.styles';
 
 export const Layout = () => (
   <Wrapper>
@@ -10,18 +10,3 @@ export const Layout = () => (
     </InnerWrapper>
   </Wrapper>
 );
-
-const Wrapper = styled.div`
-  width: 70%;
-  position: relative;
-  min-height: 100vh;
-  margin: 0 auto;
-`;
-
-const InnerWrapper = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: ${HEADER_HEIGHT};
-`;

@@ -6,7 +6,7 @@ import {
   Button,
   Select,
 } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
 
 export const TrainerSignupPage = () => {
   return (
@@ -83,21 +83,3 @@ export const TrainerSignupPage = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 60px auto;
-  gap: 15px;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-`;
-
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-`;

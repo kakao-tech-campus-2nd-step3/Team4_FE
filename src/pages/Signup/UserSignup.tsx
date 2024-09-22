@@ -1,5 +1,5 @@
 import { Text, Input, FormControl, FormLabel, Button } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
 
 export const UserSignupPage = () => {
   return (
@@ -74,21 +74,3 @@ export const UserSignupPage = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 60px auto;
-  gap: 15px;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-`;
-
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-`;
