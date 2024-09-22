@@ -2,7 +2,7 @@ export const RouterPath = {
   root: '/',
   home: '/',
   login: '/login',
-  signupType: '/signup/type',
+  signup: '/signup',
   signupUser: '/signup/user',
   signupTrainer: '/signup/trainer',
 };
