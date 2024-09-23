@@ -2,6 +2,8 @@ import { Text, Input, FormControl, FormLabel, Button } from '@chakra-ui/react';
 import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
 
 export const UserSignupPage = () => {
+  const userType = 'general';
+
   return (
     <Wrapper>
       <TitleWrapper>
@@ -58,6 +60,18 @@ export const UserSignupPage = () => {
             placeholder='지역을 입력해주세요 (예 : OO시 OO구)'
             focusBorderColor='#FF1658'
             mb='10px'
+          />
+        </FormControl>
+
+        <FormControl id='profile-image'>
+          <FormLabel>프로필 이미지</FormLabel>
+          <Input
+            type='file'
+            accept='image/*'
+            mb='10px'
+            border='none'
+            _hover={{ border: 'none' }}
+            _focus={{ border: 'none' }}
           />
         </FormControl>
 
