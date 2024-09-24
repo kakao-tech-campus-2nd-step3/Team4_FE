@@ -2,10 +2,15 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
+  justify-content: spcae-between;
+  margin: 60px auto;
+`;
+
+export const LoginWrapper = styled.div`
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 60px auto;
-  gap: 15px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -15,5 +20,5 @@ export const TitleWrapper = styled.div`
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
 `;
