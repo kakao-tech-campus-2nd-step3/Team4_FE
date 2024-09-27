@@ -1,15 +1,17 @@
-export interface UserSignupFormData extends FormData {
+export interface UserSignupFormData {
   email: string;
   password: string;
+  passwordConfirm: string;
   name: string;
-  profileImageUrl: File;
+  profileImage: File | null;
   local: string;
 }
 
-export interface TrainerSignupFormData extends FormData {
+export interface TrainerSignupFormData {
   email: string;
   password: string;
+  passwordConfirm: string;
   name: string;
-  trainerProfileImageUrl: File;
+  trainerProfileImage: File | null;
   gender: string;
 }
