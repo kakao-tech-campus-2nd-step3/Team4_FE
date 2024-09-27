@@ -70,6 +70,18 @@ export const TrainerSignupPage = () => {
           </Select>
         </FormControl>
 
+        <FormControl id='profile-image'>
+          <FormLabel>프로필 이미지</FormLabel>
+          <Input
+            type='file'
+            accept='image/*'
+            mb='10px'
+            border='none'
+            _hover={{ border: 'none' }}
+            _focus={{ border: 'none' }}
+          />
+        </FormControl>
+
         <Button
           bg='#FF1658'
           color='#F5F5F5'
