@@ -17,7 +17,6 @@ export const UserSignupPage = () => {
     local: '',
   });
 
-  //값이 변경될 때 호출되는 함수
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value, files } = e.target;
     setFormData((prev) => ({
@@ -26,7 +25,6 @@ export const UserSignupPage = () => {
     }));
   };
 
-  // 비밀번호와 비밀번호 확인이 일치하는지 확인
   const isPasswordMatch = (): boolean => {
     if (formData.password !== formData.passwordConfirm) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
@@ -36,7 +34,6 @@ export const UserSignupPage = () => {
   };
 
   const jsonToBlob = (): Blob => {
-    // JSON 데이터를 Blob으로 변환
     const jsonData = {
       email: formData.email,
       password: formData.password,
@@ -51,18 +48,16 @@ export const UserSignupPage = () => {
   };
 
   const createFormDataWithFile = (jsonBlob: Blob): FormData => {
-    // FormData 생성 및 Blob, 파일 추가
     const formDataToSend = new FormData();
-    formDataToSend.append('user', jsonBlob); // JSON 데이터를 Blob으로 추가
+    formDataToSend.append('user', jsonBlob);
 
     if (formData.profileImage) {
-      formDataToSend.append('profileImage', formData.profileImage); // 파일 추가
+      formDataToSend.append('profileImage', formData.profileImage);
     }
 
     return formDataToSend;
   };
 
-  //회원가입 버튼을 눌렀을 때 호출되는 함수
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
