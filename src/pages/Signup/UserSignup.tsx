@@ -17,7 +17,7 @@ export const UserSignupPage = () => {
     local: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value, files } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -58,7 +58,7 @@ export const UserSignupPage = () => {
     return formDataToSend;
   };
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!isPasswordMatch()) return;
@@ -75,7 +75,7 @@ export const UserSignupPage = () => {
           회원가입
         </Text>
       </TitleWrapper>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <FormWrapper>
           <FormControl id='email' isRequired>
             <FormLabel>이메일</FormLabel>
@@ -85,7 +85,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.email}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -97,7 +97,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.password}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -109,7 +109,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.passwordConfirm}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -121,7 +121,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.name}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -133,7 +133,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.local}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -146,7 +146,7 @@ export const UserSignupPage = () => {
               border='none'
               _hover={{ border: 'none' }}
               _focus={{ border: 'none' }}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
