@@ -26,16 +26,16 @@ export const UserSignupPage = () => {
     }));
   };
 
-  //회원가입 버튼을 눌렀을 때 호출되는 함수
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // 비밀번호와 비밀번호 확인이 일치하는지 확인
+  // 비밀번호와 비밀번호 확인이 일치하는지 확인
+  const isPasswordMatch = (): boolean => {
     if (formData.password !== formData.passwordConfirm) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
-      return;
+      return false;
     }
+    return true;
+  };
 
+  const jsonToBlob = (): Blob => {
     // JSON 데이터를 Blob으로 변환
     const jsonData = {
       email: formData.email,
@@ -47,6 +47,10 @@ export const UserSignupPage = () => {
       type: 'application/json',
     });
 
+    return jsonBlob;
+  };
+
+  const createFormDataWithFile = (jsonBlob: Blob): FormData => {
     // FormData 생성 및 Blob, 파일 추가
     const formDataToSend = new FormData();
     formDataToSend.append('user', jsonBlob); // JSON 데이터를 Blob으로 추가
@@ -55,7 +59,18 @@ export const UserSignupPage = () => {
       formDataToSend.append('profileImage', formData.profileImage); // 파일 추가
     }
 
-    await handleSignup(formDataToSend);
+    return formDataToSend;
+  };
+
+  //회원가입 버튼을 눌렀을 때 호출되는 함수
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!isPasswordMatch()) return;
+
+    const jsonBlob = jsonToBlob();
+
+    await handleSignup(createFormDataWithFile(jsonBlob));
   };
 
   return (
