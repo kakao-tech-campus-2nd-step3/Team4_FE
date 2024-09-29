@@ -4,9 +4,7 @@ export const userSignup = async (formData: FormData) => {
     body: formData,
   });
 
-  if (response.status === 201) {
-    return null;
-  } else {
+  if (response.status !== 201) {
     throw new Error('회원가입 실패');
   }
 };
