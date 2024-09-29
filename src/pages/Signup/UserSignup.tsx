@@ -3,8 +3,11 @@ import { Wrapper, TitleWrapper, FormWrapper } from './UserSignup.styles';
 import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
 import { UserSignupFormData } from '@/types';
+import { useNavigate } from 'react-router-dom';
 
 export const UserSignupPage = () => {
+  const navigate = useNavigate();
+
   const registerType = 'user';
   const { handleSignup } = useSignup(registerType);
 
@@ -65,7 +68,12 @@ export const UserSignupPage = () => {
 
     const jsonBlob = jsonToBlob();
 
-    await handleSignup(createFormDataWithFile(jsonBlob));
+    const isSignupSuccessful = await handleSignup(
+      createFormDataWithFile(jsonBlob)
+    );
+    if (isSignupSuccessful) {
+      navigate('/login'); // 성공 시에만 로그인 페이지로 이동
+    }
   };
 
   return (
