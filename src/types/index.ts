@@ -15,3 +15,8 @@ export interface TrainerSignupFormData {
   trainerProfileImage: File | null;
   gender: string;
 }
+
+export interface LoginData {
+  email: string;
+  password: string;
+}
