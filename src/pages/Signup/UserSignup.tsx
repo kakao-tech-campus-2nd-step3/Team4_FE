@@ -3,8 +3,11 @@ import { Wrapper, TitleWrapper, FormWrapper } from './UserSignup.styles';
 import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
 import { UserSignupFormData } from '@/types';
+import { useNavigate } from 'react-router-dom';
 
 export const UserSignupPage = () => {
+  const navigate = useNavigate();
+
   const registerType = 'user';
   const { handleSignup } = useSignup(registerType);
 
@@ -17,8 +20,7 @@ export const UserSignupPage = () => {
     local: '',
   });
 
-  //값이 변경될 때 호출되는 함수
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value, files } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -26,17 +28,15 @@ export const UserSignupPage = () => {
     }));
   };
 
-  //회원가입 버튼을 눌렀을 때 호출되는 함수
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // 비밀번호와 비밀번호 확인이 일치하는지 확인
+  const isPasswordMatch = (): boolean => {
     if (formData.password !== formData.passwordConfirm) {
       alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
-      return;
+      return false;
     }
+    return true;
+  };
 
-    // JSON 데이터를 Blob으로 변환
+  const jsonToBlob = (): Blob => {
     const jsonData = {
       email: formData.email,
       password: formData.password,
@@ -47,15 +47,33 @@ export const UserSignupPage = () => {
       type: 'application/json',
     });
 
-    // FormData 생성 및 Blob, 파일 추가
+    return jsonBlob;
+  };
+
+  const createFormDataWithFile = (jsonBlob: Blob): FormData => {
     const formDataToSend = new FormData();
-    formDataToSend.append('user', jsonBlob); // JSON 데이터를 Blob으로 추가
+    formDataToSend.append('user', jsonBlob);
 
     if (formData.profileImage) {
-      formDataToSend.append('profileImage', formData.profileImage); // 파일 추가
+      formDataToSend.append('profileImage', formData.profileImage);
     }
 
-    await handleSignup(formDataToSend);
+    return formDataToSend;
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!isPasswordMatch()) return;
+
+    const jsonBlob = jsonToBlob();
+
+    const isSignupSuccessful = await handleSignup(
+      createFormDataWithFile(jsonBlob)
+    );
+    if (isSignupSuccessful) {
+      navigate('/login'); // 성공 시에만 로그인 페이지로 이동
+    }
   };
 
   return (
@@ -65,7 +83,7 @@ export const UserSignupPage = () => {
           회원가입
         </Text>
       </TitleWrapper>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <FormWrapper>
           <FormControl id='email' isRequired>
             <FormLabel>이메일</FormLabel>
@@ -75,7 +93,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.email}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -87,7 +105,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.password}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -99,7 +117,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.passwordConfirm}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -111,7 +129,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.name}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -123,7 +141,7 @@ export const UserSignupPage = () => {
               focusBorderColor='#FF1658'
               mb='10px'
               value={formData.local}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
@@ -136,7 +154,7 @@ export const UserSignupPage = () => {
               border='none'
               _hover={{ border: 'none' }}
               _focus={{ border: 'none' }}
-              onChange={handleChange}
+              onChange={handleInputChange}
             />
           </FormControl>
 
