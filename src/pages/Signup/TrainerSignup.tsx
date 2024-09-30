@@ -10,8 +10,11 @@ import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
 import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
 import { TrainerSignupFormData } from '@/types';
+import { useNavigate } from 'react-router-dom';
 
 export const TrainerSignupPage = () => {
+  const navigate = useNavigate();
+
   const registerType = 'trainer';
   const { handleSignup } = useSignup(registerType);
 
@@ -83,7 +86,13 @@ export const TrainerSignupPage = () => {
     if (!isPasswordMatch()) return;
 
     const jsonBlob = jsonToBlob();
-    await handleSignup(createFormDataWithFile(jsonBlob));
+
+    const isSignupSuccessful = await handleSignup(
+      createFormDataWithFile(jsonBlob)
+    );
+    if (isSignupSuccessful) {
+      navigate('/login'); // 성공 시에만 로그인 페이지로 이동
+    }
   };
 
   return (
