@@ -20,9 +20,9 @@ export const useLogin = () => {
       }
 
       alert('로그인에 성공했습니다.');
-      console.log('로그인 성공:', response);
 
-      // TODO : accessToken 로컬스토리지에 저장
+      const token = await response.text();
+      localStorage.setItem('accessToken', token);
     } catch (error) {
       console.error('로그인 실패:', error);
       alert('로그인에 실패했습니다.');
