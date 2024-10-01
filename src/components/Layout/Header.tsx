@@ -9,8 +9,11 @@ import {
   UserWrapper,
   StyledLink,
 } from './Header.styles';
+import { useAuth } from '@/hooks/useAuth';
 
 export const Header = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <Wrapper>
       <StyledChatIcon />
@@ -18,9 +21,19 @@ export const Header = () => {
         <Logo src={LogoImage} alt='logo' />
       </Link>
       <UserWrapper>
-        <StyledLink to={RouterPath.login}>로그인</StyledLink>
-        <Text fontSize='xs'>/</Text>
-        <StyledLink to={RouterPath.signup}>회원가입</StyledLink>
+        {isAuthenticated ? (
+          <>
+            <StyledLink to={RouterPath.login}>내정보</StyledLink>
+            <Text fontSize='xs'>/</Text>
+            <StyledLink to={RouterPath.signup}>로그아웃</StyledLink>
+          </>
+        ) : (
+          <>
+            <StyledLink to={RouterPath.login}>로그인</StyledLink>
+            <Text fontSize='xs'>/</Text>
+            <StyledLink to={RouterPath.signup}>회원가입</StyledLink>
+          </>
+        )}
       </UserWrapper>
     </Wrapper>
   );
