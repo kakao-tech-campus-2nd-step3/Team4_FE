@@ -2,9 +2,12 @@ import { LoginData } from '@/types';
 import { userLogin } from '@/api/auth/userLogin';
 import { trainerLogin } from '@/api/auth/trainerLogin';
 import { useAuth } from './useAuth';
+import { useNavigate } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
 
 export const useLogin = () => {
   const { setAuth } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogin = async (
     loginData: LoginData,
@@ -29,6 +32,8 @@ export const useLogin = () => {
       localStorage.setItem('type', loginType);
 
       setAuth({ isAuthenticated: true, type: loginType });
+
+      navigate(RouterPath.home);
     } catch (error) {
       console.error('로그인 실패:', error);
       alert('로그인에 실패했습니다.');
