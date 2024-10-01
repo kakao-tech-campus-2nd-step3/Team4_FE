@@ -8,11 +8,14 @@ import {
   Logo,
   UserWrapper,
   StyledLink,
+  StyledButton,
 } from './Header.styles';
 import { useAuth } from '@/hooks/useAuth';
+import { useLogout } from '@/hooks/useLogout';
 
 export const Header = () => {
   const { isAuthenticated } = useAuth();
+  const { handleLogout } = useLogout();
 
   return (
     <Wrapper>
@@ -25,7 +28,7 @@ export const Header = () => {
           <>
             <StyledLink to={RouterPath.login}>내정보</StyledLink>
             <Text fontSize='xs'>/</Text>
-            <StyledLink to={RouterPath.signup}>로그아웃</StyledLink>
+            <StyledButton onClick={handleLogout}>로그아웃</StyledButton>
           </>
         ) : (
           <>
