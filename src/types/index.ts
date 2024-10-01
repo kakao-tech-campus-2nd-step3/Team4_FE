@@ -20,3 +20,12 @@ export interface LoginData {
   email: string;
   password: string;
 }
+
+export interface AuthContextType {
+  isAuthenticated: boolean;
+  type: 'user' | 'trainer' | null;
+  setAuth: (auth: {
+    isAuthenticated: boolean;
+    type: 'user' | 'trainer' | null;
+  }) => void;
+}
