@@ -1,9 +1,12 @@
-import { Wrapper } from './UserHome.styles';
+import { UserHomeProfile } from '@/components/Profile/UserHomeProfile';
+import { Wrapper, UserHomeProfileWrapper } from './UserHome.styles';
 
 export const UserHomePage = () => {
   return (
     <Wrapper>
-      <p>일반회원 홈화면</p>
+      <UserHomeProfileWrapper>
+        <UserHomeProfile />
+      </UserHomeProfileWrapper>
     </Wrapper>
   );
 };
