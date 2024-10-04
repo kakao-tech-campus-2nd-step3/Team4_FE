@@ -29,3 +29,9 @@ export interface AuthContextType {
     type: 'user' | 'trainer' | null;
   }) => void;
 }
+
+export interface UserProfile {
+  profileImageUrl: string;
+  name: string;
+  local: string;
+}
