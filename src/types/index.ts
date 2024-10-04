@@ -4,7 +4,7 @@ export interface UserSignupFormData {
   passwordConfirm: string;
   name: string;
   profileImage: File | null;
-  local: string;
+  location: string;
 }
 
 export interface TrainerSignupFormData {
@@ -33,5 +33,5 @@ export interface AuthContextType {
 export interface UserProfile {
   profileImageUrl: string;
   name: string;
-  local: string;
+  location: string;
 }

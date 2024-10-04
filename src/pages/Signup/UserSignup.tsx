@@ -18,7 +18,7 @@ export const UserSignupPage = () => {
     passwordConfirm: '',
     name: '',
     profileImage: null,
-    local: '',
+    location: '',
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +49,7 @@ export const UserSignupPage = () => {
     setAddress(fullAddress);
     setFormData((prev) => ({
       ...prev,
-      local: fullAddress,
+      location: fullAddress,
     }));
   };
 
@@ -66,7 +66,7 @@ export const UserSignupPage = () => {
       email: formData.email,
       password: formData.password,
       name: formData.name,
-      local: formData.local,
+      location: formData.location,
     };
     const jsonBlob = new Blob([JSON.stringify(jsonData)], {
       type: 'application/json',
@@ -158,7 +158,7 @@ export const UserSignupPage = () => {
             />
           </FormControl>
 
-          <FormControl id='local' isRequired>
+          <FormControl id='location' isRequired>
             <FormLabel>지역</FormLabel>
 
             <DaumPostcode onComplete={handleAddressComplete} />
