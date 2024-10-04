@@ -35,3 +35,9 @@ export interface UserProfile {
   name: string;
   location: string;
 }
+
+export interface TrainerProfile {
+  trainerProfileImageUrl: string;
+  name: string;
+  gender: string;
+}
