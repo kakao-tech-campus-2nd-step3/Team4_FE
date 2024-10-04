@@ -15,5 +15,4 @@ export const TitleWrapper = styled.div`
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
 `;

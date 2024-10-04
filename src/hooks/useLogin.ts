@@ -1,8 +1,14 @@
 import { LoginData } from '@/types';
 import { userLogin } from '@/api/auth/userLogin';
 import { trainerLogin } from '@/api/auth/trainerLogin';
+import { useAuth } from './useAuth';
+import { useNavigate } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
 
 export const useLogin = () => {
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+
   const handleLogin = async (
     loginData: LoginData,
     loginType: 'user' | 'trainer'
@@ -20,9 +26,14 @@ export const useLogin = () => {
       }
 
       alert('로그인에 성공했습니다.');
-      console.log('로그인 성공:', response);
 
-      // TODO : accessToken 로컬스토리지에 저장
+      const token = await response.text();
+      localStorage.setItem('accessToken', token);
+      localStorage.setItem('type', loginType);
+
+      setAuth({ isAuthenticated: true, type: loginType });
+
+      navigate(RouterPath.home);
     } catch (error) {
       console.error('로그인 실패:', error);
       alert('로그인에 실패했습니다.');

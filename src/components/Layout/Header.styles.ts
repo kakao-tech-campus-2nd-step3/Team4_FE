@@ -37,3 +37,12 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
 `;
+
+export const StyledButton = styled.button`
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 5px;
+`;
