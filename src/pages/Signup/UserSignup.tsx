@@ -4,6 +4,7 @@ import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
 import { UserSignupFormData } from '@/types';
 import { useNavigate } from 'react-router-dom';
+import DaumPostcode from 'react-daum-postcode';
 
 export const UserSignupPage = () => {
   const navigate = useNavigate();
@@ -25,6 +26,30 @@ export const UserSignupPage = () => {
     setFormData((prev) => ({
       ...prev,
       [id]: files ? files[0] : value, // 파일 필드 처리
+    }));
+  };
+
+  const [address, setAddress] = useState('');
+
+  const handleAddressComplete = (data: any) => {
+    let fullAddress = data.address;
+    let extraAddress = '';
+
+    if (data.addressType === 'R') {
+      if (data.bname !== '') {
+        extraAddress += data.bname;
+      }
+      if (data.buildingName !== '') {
+        extraAddress +=
+          extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+    }
+
+    setAddress(fullAddress);
+    setFormData((prev) => ({
+      ...prev,
+      local: fullAddress,
     }));
   };
 
@@ -135,14 +160,9 @@ export const UserSignupPage = () => {
 
           <FormControl id='local' isRequired>
             <FormLabel>지역</FormLabel>
-            <Input
-              type='text'
-              placeholder='지역을 입력해주세요 (예 : OO시 OO구)'
-              focusBorderColor='#FF1658'
-              mb='10px'
-              value={formData.local}
-              onChange={handleInputChange}
-            />
+
+            <DaumPostcode onComplete={handleAddressComplete} />
+            <Text mb='15px'>주소: {address}</Text>
           </FormControl>
 
           <FormControl id='profileImage'>
