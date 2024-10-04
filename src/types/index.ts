@@ -4,7 +4,7 @@ export interface UserSignupFormData {
   passwordConfirm: string;
   name: string;
   profileImage: File | null;
-  local: string;
+  location: string;
 }
 
 export interface TrainerSignupFormData {
@@ -19,4 +19,25 @@ export interface TrainerSignupFormData {
 export interface LoginData {
   email: string;
   password: string;
+}
+
+export interface AuthContextType {
+  isAuthenticated: boolean;
+  type: 'user' | 'trainer' | null;
+  setAuth: (auth: {
+    isAuthenticated: boolean;
+    type: 'user' | 'trainer' | null;
+  }) => void;
+}
+
+export interface UserProfile {
+  profileImageUrl: string;
+  name: string;
+  location: string;
+}
+
+export interface TrainerProfile {
+  trainerProfileImageUrl: string;
+  name: string;
+  gender: string;
 }
