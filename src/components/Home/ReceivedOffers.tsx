@@ -13,7 +13,7 @@ export const ReceivedOffers = () => {
       <Card height='125px'>
         <StyledCardBody>
           <StyledText>받은 제안</StyledText>
-          <StyledImage src={ReceiveOfferImage} alt='ReceiveOfferImage' />
+          <StyledImage src={ReceiveOfferImage} alt='받은 제안' />
         </StyledCardBody>
       </Card>
     </Wrapper>

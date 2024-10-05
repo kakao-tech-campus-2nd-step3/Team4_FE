@@ -13,7 +13,7 @@ export const PTMatching = () => {
       <Card height='270px'>
         <StyledCardBody>
           <StyledText>PT 매칭하기</StyledText>
-          <StyledImage src={PTMatchingImage} alt='PTMatchingImage' />
+          <StyledImage src={PTMatchingImage} alt='PT 매칭하기' />
         </StyledCardBody>
       </Card>
     </Wrapper>

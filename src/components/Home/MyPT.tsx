@@ -12,8 +12,8 @@ export const MyPT = () => {
     <Wrapper>
       <Card height='125px'>
         <StyledCardBody>
-          <StyledImage src={MyPTImage} alt='MyPTImage' />
-          <StyledText>내 피티</StyledText>
+          <StyledImage src={MyPTImage} alt='내 PT' />
+          <StyledText>내 PT</StyledText>
         </StyledCardBody>
       </Card>
     </Wrapper>

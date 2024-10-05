@@ -20,10 +20,7 @@ export const TrainerHomeProfile = () => {
     <Wrapper>
       <Card>
         <StyledCardBody>
-          <StyledProfileImage
-            src={profile.profileImageUrl}
-            alt='프로필 이미지'
-          />
+          <StyledProfileImage src={profile.profileImageUrl} alt='프로필' />
           <StyledNameText mt='15px'>
             {profile.name}님 안녕하세요!
           </StyledNameText>
