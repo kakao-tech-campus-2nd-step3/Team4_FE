@@ -10,8 +10,11 @@ import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
 import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
 import { TrainerSignupFormData } from '@/types';
+import { useNavigate } from 'react-router-dom';
 
 export const TrainerSignupPage = () => {
+  const navigate = useNavigate();
+
   const registerType = 'trainer';
   const { handleSignup } = useSignup(registerType);
 
@@ -20,7 +23,7 @@ export const TrainerSignupPage = () => {
     password: '',
     passwordConfirm: '',
     name: '',
-    trainerProfileImage: null,
+    profileImage: null,
     gender: '',
   });
 
@@ -67,11 +70,8 @@ export const TrainerSignupPage = () => {
     const formDataToSend = new FormData();
     formDataToSend.append('trainer', jsonBlob);
 
-    if (formData.trainerProfileImage) {
-      formDataToSend.append(
-        'trainerProfileImage',
-        formData.trainerProfileImage
-      );
+    if (formData.profileImage) {
+      formDataToSend.append('profileImage', formData.profileImage);
     }
 
     return formDataToSend;
@@ -83,7 +83,13 @@ export const TrainerSignupPage = () => {
     if (!isPasswordMatch()) return;
 
     const jsonBlob = jsonToBlob();
-    await handleSignup(createFormDataWithFile(jsonBlob));
+
+    const isSignupSuccessful = await handleSignup(
+      createFormDataWithFile(jsonBlob)
+    );
+    if (isSignupSuccessful) {
+      navigate('/login'); // 성공 시에만 로그인 페이지로 이동
+    }
   };
 
   return (
@@ -152,12 +158,12 @@ export const TrainerSignupPage = () => {
               value={formData.gender}
               onChange={handleSelectChange}
             >
-              <option value='male'>남성</option>
-              <option value='female'>여성</option>
+              <option value='MALE'>남성</option>
+              <option value='FEMALE'>여성</option>
             </Select>
           </FormControl>
 
-          <FormControl id='trainerProfileImage'>
+          <FormControl id='profileImage'>
             <FormLabel>프로필 이미지</FormLabel>
             <Input
               type='file'
