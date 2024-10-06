@@ -5,15 +5,15 @@ import {
   StyledText,
   StyledCardBody,
 } from './ReceivedOffers.styles';
-import ReceiveOfferImage from '@/assets/invitation.png';
+import ReviewsImage from '@/assets/invitation.png';
 
-export const ReceivedOffers = () => {
+export const Reviews = () => {
   return (
     <Wrapper>
       <Card height='125px'>
         <StyledCardBody>
-          <StyledText>받은 제안</StyledText>
-          <StyledImage src={ReceiveOfferImage} alt='받은 제안' />
+          <StyledText>리뷰 보기</StyledText>
+          <StyledImage src={ReviewsImage} alt='리뷰 보기' />
         </StyledCardBody>
       </Card>
     </Wrapper>

@@ -5,15 +5,15 @@ import {
   StyledCardBody,
   StyledText,
 } from './MyPT.styles';
-import MyPTImage from '@/assets/date.png';
+import ProposalHistoryImage from '@/assets/send.png';
 
-export const MyPT = () => {
+export const ProposalHistory = () => {
   return (
     <Wrapper>
       <Card height='125px'>
         <StyledCardBody>
-          <StyledImage src={MyPTImage} alt='내 PT' />
-          <StyledText>내 PT</StyledText>
+          <StyledImage src={ProposalHistoryImage} alt='내 제안 기록' />
+          <StyledText>내 제안 기록</StyledText>
         </StyledCardBody>
       </Card>
     </Wrapper>

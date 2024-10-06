@@ -23,7 +23,7 @@ export const TrainerSignupPage = () => {
     password: '',
     passwordConfirm: '',
     name: '',
-    trainerProfileImage: null,
+    profileImage: null,
     gender: '',
   });
 
@@ -70,11 +70,8 @@ export const TrainerSignupPage = () => {
     const formDataToSend = new FormData();
     formDataToSend.append('trainer', jsonBlob);
 
-    if (formData.trainerProfileImage) {
-      formDataToSend.append(
-        'trainerProfileImage',
-        formData.trainerProfileImage
-      );
+    if (formData.profileImage) {
+      formDataToSend.append('profileImage', formData.profileImage);
     }
 
     return formDataToSend;
@@ -161,12 +158,12 @@ export const TrainerSignupPage = () => {
               value={formData.gender}
               onChange={handleSelectChange}
             >
-              <option value='male'>남성</option>
-              <option value='female'>여성</option>
+              <option value='MALE'>남성</option>
+              <option value='FEMALE'>여성</option>
             </Select>
           </FormControl>
 
-          <FormControl id='trainerProfileImage'>
+          <FormControl id='profileImage'>
             <FormLabel>프로필 이미지</FormLabel>
             <Input
               type='file'
