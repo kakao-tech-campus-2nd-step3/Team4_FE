@@ -161,8 +161,8 @@ export const TrainerSignupPage = () => {
               value={formData.gender}
               onChange={handleSelectChange}
             >
-              <option value='male'>남성</option>
-              <option value='female'>여성</option>
+              <option value='MALE'>남성</option>
+              <option value='FEMALE'>여성</option>
             </Select>
           </FormControl>
 
