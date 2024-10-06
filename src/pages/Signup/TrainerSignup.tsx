@@ -23,7 +23,7 @@ export const TrainerSignupPage = () => {
     password: '',
     passwordConfirm: '',
     name: '',
-    trainerProfileImage: null,
+    profileImage: null,
     gender: '',
   });
 
@@ -70,11 +70,8 @@ export const TrainerSignupPage = () => {
     const formDataToSend = new FormData();
     formDataToSend.append('trainer', jsonBlob);
 
-    if (formData.trainerProfileImage) {
-      formDataToSend.append(
-        'trainerProfileImage',
-        formData.trainerProfileImage
-      );
+    if (formData.profileImage) {
+      formDataToSend.append('profileImage', formData.profileImage);
     }
 
     return formDataToSend;
@@ -166,7 +163,7 @@ export const TrainerSignupPage = () => {
             </Select>
           </FormControl>
 
-          <FormControl id='trainerProfileImage'>
+          <FormControl id='profileImage'>
             <FormLabel>프로필 이미지</FormLabel>
             <Input
               type='file'
