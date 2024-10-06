@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import { getUserProfile } from '@/api/profile/userProfile';
+import { getUserProfile } from '@/api/profile/getUserProfile';
+import { getTrainerProfile } from '@/api/profile/getTrainerProfile';
 import { TrainerProfile, UserProfile } from '@/types';
 
 export const useProfile = () => {
@@ -16,8 +17,8 @@ export const useProfile = () => {
           const data = await getUserProfile();
           setProfile(data);
         } else if (type === 'trainer') {
-          // const data = await getTrainerProfile();
-          // setProfile(data);
+          const data = await getTrainerProfile();
+          setProfile(data);
         }
       } catch (error) {
         console.error(error);

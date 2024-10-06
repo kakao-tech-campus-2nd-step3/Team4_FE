@@ -12,7 +12,7 @@ export interface TrainerSignupFormData {
   password: string;
   passwordConfirm: string;
   name: string;
-  trainerProfileImage: File | null;
+  profileImage: File | null;
   gender: string;
 }
 
@@ -37,7 +37,7 @@ export interface UserProfile {
 }
 
 export interface TrainerProfile {
-  trainerProfileImageUrl: string;
+  profileImageUrl: string;
   name: string;
   gender: string;
 }

@@ -7,10 +7,11 @@ import {
 } from './UserHomeProfile.styles';
 import { useProfile } from '@/hooks/useProfile';
 
-export const UserHomeProfile = () => {
+export const TrainerHomeProfile = () => {
   const profile = useProfile();
 
-  // profile이 UserProfile 타입인지 확인
+  // profile이 TrainerProfile 타입인지 확인
+  // TODO : 프로필 이미지 명칭 통일에 대해 백엔드와 논의 후 이 부분과 type 부분 수정
   if (!profile || !('profileImageUrl' in profile)) {
     return <p>프로필 정보를 불러오는 중...</p>;
   }
