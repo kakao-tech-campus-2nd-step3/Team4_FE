@@ -10,8 +10,7 @@ import { useProfile } from '@/hooks/useProfile';
 export const UserHomeProfile = () => {
   const profile = useProfile();
 
-  // profile이 UserProfile 타입인지 확인
-  if (!profile || !('profileImageUrl' in profile)) {
+  if (!profile) {
     return <p>프로필 정보를 불러오는 중...</p>;
   }
 
