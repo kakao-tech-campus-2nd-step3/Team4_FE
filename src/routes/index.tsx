@@ -6,6 +6,7 @@ import { SignupPage } from '@/pages/Signup';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
 import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { LoginPage } from '@/pages/Login';
+import { MyPage } from '@/pages/MyPage';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.signupTrainer,
         element: <TrainerSignupPage />,
+      },
+      {
+        path: RouterPath.mypage,
+        element: <MyPage />,
       },
     ],
   },

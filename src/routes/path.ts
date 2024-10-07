@@ -5,4 +5,5 @@ export const RouterPath = {
   signup: '/signup',
   signupUser: '/signup/user',
   signupTrainer: '/signup/trainer',
+  mypage: '/mypage',
 };
