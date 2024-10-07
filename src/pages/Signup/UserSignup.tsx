@@ -32,17 +32,22 @@ export const UserSignupPage = () => {
   const [address, setAddress] = useState('');
 
   const handleAddressComplete = (data: any) => {
+    // 기본 주소를 data에서 가져와 fullAddress에 저장
     let fullAddress = data.address;
     let extraAddress = '';
 
+    // 주소 타입이 'R'인 경우(도로명 주소)
     if (data.addressType === 'R') {
+      // 동 이름(bname)이 있으면 extraAddress에 추가
       if (data.bname !== '') {
         extraAddress += data.bname;
       }
+      // 건물 이름(buildingName)이 있으면 추가, 이미 동 이름이 있을 경우 콤마로 구분
       if (data.buildingName !== '') {
         extraAddress +=
           extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
       }
+      // 추가 주소 정보가 있으면 괄호로 묶어서 fullAddress에 추가
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
 
