@@ -1,3 +1,21 @@
+import { UserMyPageProfile } from '@/components/MyPage/Profile/UserMyPageProfile';
+import { StyledButton, Wrapper } from './UserMyPage.styles';
+import { useNavigate } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
+
 export const UserMyPage = () => {
-  return <p>일반회원 마이페이지</p>;
+  const navigate = useNavigate();
+
+  const navigateToRegisterInbody = () => {
+    navigate(RouterPath.registerInbody);
+  };
+
+  return (
+    <Wrapper>
+      <UserMyPageProfile />
+      <StyledButton type='button' onClick={navigateToRegisterInbody}>
+        인바디 이미지 등록하기
+      </StyledButton>
+    </Wrapper>
+  );
 };
