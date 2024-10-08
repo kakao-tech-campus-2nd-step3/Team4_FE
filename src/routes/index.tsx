@@ -7,7 +7,7 @@ import { UserSignupPage } from '@/pages/Signup/UserSignup';
 import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { LoginPage } from '@/pages/Login';
 import { MyPage } from '@/pages/MyPage';
-import { RegisterInbody } from '@/pages/Info/RegisterInbody';
+import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 
 const router = createBrowserRouter([
   {
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
       {
-        path: RouterPath.registerInbody,
-        element: <RegisterInbody />,
+        path: RouterPath.registerBodyInfo,
+        element: <RegisterBodyInfo />,
       },
     ],
   },

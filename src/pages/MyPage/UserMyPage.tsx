@@ -7,7 +7,7 @@ export const UserMyPage = () => {
   const navigate = useNavigate();
 
   const navigateToRegisterInbody = () => {
-    navigate(RouterPath.registerInbody);
+    navigate(RouterPath.registerBodyInfo);
   };
 
   return (
