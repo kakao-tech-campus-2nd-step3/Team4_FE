@@ -11,8 +11,12 @@ import {
 } from './RegisterBodyInfo.styles';
 import { PlusSquareIcon } from '@chakra-ui/icons';
 import { useBodyInfo } from '@/hooks/useBodyInfo';
+import { useNavigate } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
 
 export const RegisterBodyInfo = () => {
+  const navigate = useNavigate();
+
   const { handleUploadBodyInfo } = useBodyInfo();
 
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -37,6 +41,7 @@ export const RegisterBodyInfo = () => {
     formData.append('inbodyImage', selectedImage);
 
     handleUploadBodyInfo(formData);
+    navigate(RouterPath.mypage);
   };
 
   const handleClickFileInput = () => {
