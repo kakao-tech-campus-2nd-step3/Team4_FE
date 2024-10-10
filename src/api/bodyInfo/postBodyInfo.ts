@@ -2,8 +2,7 @@ export const postBodyInfo = async (formData: FormData) => {
   const token = localStorage.getItem('accessToken');
 
   try {
-    //TODO : 추후 엔드포인트 /info -> /bodyInfo 로 변경
-    const response = await fetch('/api/users/info', {
+    const response = await fetch('/api/users/bodyInfo', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
