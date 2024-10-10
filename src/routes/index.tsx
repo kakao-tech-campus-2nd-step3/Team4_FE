@@ -6,6 +6,9 @@ import { SignupPage } from '@/pages/Signup';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
 import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { LoginPage } from '@/pages/Login';
+import { MyPage } from '@/pages/MyPage';
+import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
+import { RegisterCareer } from '@/pages/Career/RegisterCareer';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ const router = createBrowserRouter([
       {
         path: RouterPath.signupTrainer,
         element: <TrainerSignupPage />,
+      },
+      {
+        path: RouterPath.mypage,
+        element: <MyPage />,
+      },
+      {
+        path: RouterPath.registerBodyInfo,
+        element: <RegisterBodyInfo />,
+      },
+      {
+        path: RouterPath.registerCareer,
+        element: <RegisterCareer />,
       },
     ],
   },
