@@ -41,3 +41,7 @@ export interface TrainerProfile {
   name: string;
   gender: string;
 }
+
+export interface Career {
+  career: string;
+}
