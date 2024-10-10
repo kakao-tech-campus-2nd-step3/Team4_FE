@@ -26,7 +26,7 @@ export const Header = () => {
       <UserWrapper>
         {isAuthenticated ? (
           <>
-            <StyledLink to={RouterPath.login}>내정보</StyledLink>
+            <StyledLink to={RouterPath.mypage}>내정보</StyledLink>
             <Text fontSize='xs'>/</Text>
             <StyledButton onClick={handleLogout}>로그아웃</StyledButton>
           </>
