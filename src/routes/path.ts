@@ -7,4 +7,5 @@ export const RouterPath = {
   signupTrainer: '/signup/trainer',
   mypage: '/mypage',
   registerBodyInfo: '/registerBodyInfo',
+  registerCareer: '/registerCareer',
 };

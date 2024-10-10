@@ -8,6 +8,7 @@ import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { LoginPage } from '@/pages/Login';
 import { MyPage } from '@/pages/MyPage';
 import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
+import { RegisterCareer } from '@/pages/Career/RegisterCareer';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.registerBodyInfo,
         element: <RegisterBodyInfo />,
+      },
+      {
+        path: RouterPath.registerCareer,
+        element: <RegisterCareer />,
       },
     ],
   },
