@@ -45,3 +45,9 @@ export interface TrainerProfile {
 export interface Career {
   career: string;
 }
+
+export interface BodyInfo {
+  infoId: number;
+  inbodyImageUrl: string;
+  createDate: string;
+}
