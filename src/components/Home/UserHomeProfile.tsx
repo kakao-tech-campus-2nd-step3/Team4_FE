@@ -22,7 +22,7 @@ export const UserHomeProfile = () => {
   };
 
   return (
-    <Wrapper onClick={handleProfileClick} style={{ cursor: 'pointer' }}>
+    <Wrapper onClick={handleProfileClick}>
       <Card>
         <StyledCardBody>
           <StyledProfileImage src={profile.profileImageUrl} alt='프로필' />
