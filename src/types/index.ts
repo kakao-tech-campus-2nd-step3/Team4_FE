@@ -51,3 +51,8 @@ export interface BodyInfo {
   inbodyImageUrl: string;
   createDate: string;
 }
+
+export interface CareerResponse {
+  id: number;
+  career: string;
+}
