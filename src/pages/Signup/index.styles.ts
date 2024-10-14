@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Card, Text } from '@chakra-ui/react';
+import { colors } from '@/styles/colors';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ export const RoleText = styled(Text)`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  color: #2c2c2c;
+  color: ${colors.black};
   margin-top: 6px;
 `;
 

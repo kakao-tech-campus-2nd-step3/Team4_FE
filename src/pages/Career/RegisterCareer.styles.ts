@@ -1,3 +1,4 @@
+import { colors } from '@/styles/colors';
 import { Button, Input, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
@@ -20,17 +21,17 @@ export const StyledInput = styled(Input)`
 
 export const StyledAddButton = styled(Button)`
   background-color: #4f4f4f;
-  color: #f5f5f5;
+  color: ${colors.white};
   &:hover {
-    background-color: #2c2c2c;
+    background-color: ${colors.black};
   }
   margin: 20px 0 10px;
   width: 100%;
 `;
 
 export const StyledUploadButton = styled(Button)`
-  background-color: #ff1658;
-  color: #f5f5f5;
+  background-color: ${colors.mainColor};
+  color: ${colors.white};
   &:hover {
     background-color: #ff467e;
   }
