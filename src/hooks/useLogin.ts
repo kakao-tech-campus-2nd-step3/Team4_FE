@@ -27,7 +27,7 @@ export const useLogin = () => {
 
       alert('로그인에 성공했습니다.');
 
-      const token = await response.text();
+      const { token } = await response;
       localStorage.setItem('accessToken', token);
       localStorage.setItem('type', loginType);
 
