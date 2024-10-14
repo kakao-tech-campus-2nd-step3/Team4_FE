@@ -1,3 +1,4 @@
+import { colors } from '@/styles/colors';
 import { Button, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
@@ -28,17 +29,17 @@ export const FileWrapper = styled.div`
 
 export const StyledFileButton = styled(Button)`
   background-color: #4f4f4f;
-  color: #f5f5f5;
+  color: ${colors.white};
   &:hover {
-    background-color: #2c2c2c;
+    background-color: ${colors.black};
   }
   margin-bottom: 20px;
   width: 100%;
 `;
 
 export const StyledUploadButton = styled(Button)`
-  background-color: #ff1658;
-  color: #f5f5f5;
+  background-color: ${colors.mainColor};
+  color: ${colors.white};
   &:hover {
     background-color: #ff467e;
   }
