@@ -1,17 +1,10 @@
 import { LoginData } from '@/types';
+import { fetchAPI } from '..';
 
 export const trainerLogin = async ({ email, password }: LoginData) => {
-  const response = await fetch('/api/auth/trainer/login', {
+  return await fetchAPI({
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
+    endpoint: '/auth/trainer/login',
+    body: { email, password },
   });
-
-  if (response.status === 200) {
-    return response;
-  } else {
-    throw new Error('로그인 실패');
-  }
 };

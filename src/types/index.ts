@@ -41,3 +41,13 @@ export interface TrainerProfile {
   name: string;
   gender: string;
 }
+
+export interface Career {
+  career: string;
+}
+
+export interface BodyInfo {
+  infoId: number;
+  inbodyImageUrl: string;
+  createDate: string;
+}

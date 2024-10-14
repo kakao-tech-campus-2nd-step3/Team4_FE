@@ -31,6 +31,8 @@ export const UserSignupPage = () => {
 
   const [address, setAddress] = useState('');
 
+  // react-daum-postcode 예제 코드 사용
+  // https://www.npmjs.com/package/react-daum-postcode 참고
   const handleAddressComplete = (data: any) => {
     let fullAddress = data.address;
     let extraAddress = '';
