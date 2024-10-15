@@ -9,6 +9,7 @@ import { LoginPage } from '@/pages/Login';
 import { MyPage } from '@/pages/MyPage';
 import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
+import { Preference } from '@/pages/Preference';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.registerCareer,
         element: <RegisterCareer />,
+      },
+      {
+        path: RouterPath.preference,
+        element: <Preference />,
       },
     ],
   },
