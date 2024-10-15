@@ -56,3 +56,10 @@ export interface CareerResponse {
   id: number;
   career: string;
 }
+
+export interface Preference {
+  sportsId: number;
+  gender: string;
+  range: number;
+  goal: string;
+}
