@@ -3,7 +3,7 @@ import { Career } from '@/types';
 export const postCareer = async (careers: Career[]) => {
   const token = localStorage.getItem('accessToken');
 
-  const response = await fetch('/api/trainers/career', {
+  const response = await fetch('/api/trainers/careers', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
