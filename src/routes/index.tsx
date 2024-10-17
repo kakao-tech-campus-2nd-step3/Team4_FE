@@ -10,6 +10,7 @@ import { MyPage } from '@/pages/MyPage';
 import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
 import { PreferencePage } from '@/pages/Preference';
+import { ClientFinder } from '@/pages/Clients/ClientFinder';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.preference,
         element: <PreferencePage />,
+      },
+      {
+        path: RouterPath.clientFinder,
+        element: <ClientFinder />,
       },
     ],
   },

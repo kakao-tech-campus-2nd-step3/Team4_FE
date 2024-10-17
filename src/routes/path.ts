@@ -9,4 +9,5 @@ export const RouterPath = {
   registerBodyInfo: '/registerBodyInfo',
   registerCareer: '/registerCareer',
   preference: '/preference',
+  clientFinder: '/clientFinder',
 };
