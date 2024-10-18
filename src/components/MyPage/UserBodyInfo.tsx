@@ -7,13 +7,13 @@ import {
   ModalBody,
   ModalCloseButton,
   Image,
-  Text,
 } from '@chakra-ui/react';
 import { useBodyInfo } from '@/hooks/useBodyInfo';
 import {
   StyledButton,
   StyledCard,
   HistoryBox,
+  StyledDefaultText,
   StyledDateText,
   StyledTitleText,
 } from './UserBodyInfo.styles';
@@ -36,7 +36,7 @@ export const UserBodyInfo = () => {
     <StyledCard>
       <StyledTitleText>&#128196; 나의 히스토리</StyledTitleText>
       {bodyInfo.length === 0 ? (
-        <Text>등록된 인바디 이미지가 없습니다.</Text>
+        <StyledDefaultText>등록된 인바디 이미지가 없습니다.</StyledDefaultText>
       ) : (
         bodyInfo.map((info) => (
           <HistoryBox key={info.infoId}>
