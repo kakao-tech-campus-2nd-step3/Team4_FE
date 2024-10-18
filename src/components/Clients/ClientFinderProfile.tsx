@@ -17,7 +17,7 @@ import {
   StyledGoalText,
   StyledInbodyButton,
   StyledButton,
-} from './ClientFinder.styles';
+} from './ClientFinderProfile.styles';
 import { PreferenceResponse } from '@/types';
 import { useState } from 'react';
 
