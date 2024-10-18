@@ -63,3 +63,11 @@ export interface Preference {
   range: number;
   goal: string;
 }
+
+export interface PreferenceResponse {
+  userId: number;
+  name: string;
+  inbodyImageUrl: string;
+  goal: string;
+  profileImageUrl: string;
+}
