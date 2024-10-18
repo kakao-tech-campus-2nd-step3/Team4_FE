@@ -1,9 +1,10 @@
+import { getPreference } from '@/api/preference/getPreference';
 import { postPreference } from '@/api/preference/postPreference';
-import { Preference } from '@/types';
-import { useState } from 'react';
+import { Preference, PreferenceResponse } from '@/types';
+import { useEffect, useState } from 'react';
 
 export const usePreference = () => {
-  const preference = useState<Preference>();
+  const [preferences, setPreferences] = useState<PreferenceResponse[]>([]);
 
   const handleUploadPreference = async (preference: Preference) => {
     try {
@@ -16,5 +17,21 @@ export const usePreference = () => {
     }
   };
 
-  return { preference, handleUploadPreference };
+  useEffect(() => {
+    const fetchPreference = async () => {
+      try {
+        const data = await getPreference();
+        setPreferences(data);
+      } catch (error) {
+        console.error(
+          '매칭 신청 고객 데이터를 가져오는데 실패했습니다.',
+          error
+        );
+      }
+    };
+
+    fetchPreference();
+  }, []);
+
+  return { preferences, handleUploadPreference };
 };
