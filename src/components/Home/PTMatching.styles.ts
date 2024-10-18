@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   height: 300px;
+  cursor: pointer;
 `;
 
 export const StyledCardBody = styled(CardBody)`
