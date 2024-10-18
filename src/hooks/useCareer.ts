@@ -1,7 +1,11 @@
+import { getCareer } from '@/api/career/getCareer';
 import { postCareer } from '@/api/career/postCareer';
-import { Career } from '@/types';
+import { Career, CareerResponse } from '@/types';
+import { useEffect, useState } from 'react';
 
 export const useCareer = () => {
+  const [careers, setCareers] = useState<CareerResponse[]>([]);
+
   const handleUploadCareer = async (careers: Career[]) => {
     try {
       await postCareer(careers);
@@ -13,5 +17,18 @@ export const useCareer = () => {
     }
   };
 
-  return { handleUploadCareer };
+  useEffect(() => {
+    const fetchCareer = async () => {
+      try {
+        const data = await getCareer();
+        setCareers(data);
+      } catch (error) {
+        console.error('경력 데이터를 가져오는데 실패했습니다.', error);
+      }
+    };
+
+    fetchCareer();
+  }, []);
+
+  return { careers, handleUploadCareer };
 };

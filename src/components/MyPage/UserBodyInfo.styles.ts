@@ -14,6 +14,10 @@ export const StyledTitleText = styled(Text)`
   margin: 20px 0px 30px;
 `;
 
+export const StyledDefaultText = styled(Text)`
+  text-align: center;
+`;
+
 export const HistoryBox = styled(Box)`
   display: flex;
   align-items: center;

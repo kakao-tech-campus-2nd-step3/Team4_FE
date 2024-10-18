@@ -33,5 +33,9 @@ export const fetchAPI = async ({
     throw new Error('API 요청 실패');
   }
 
-  return response.json();
+  const contentType = response.headers.get('Content-Type');
+  const hasBody = contentType && contentType.includes('application/json');
+
+  // 응답 본문이 있을 때만 JSON으로 변환
+  return hasBody ? response.json() : null;
 };

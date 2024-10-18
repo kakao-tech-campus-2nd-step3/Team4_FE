@@ -2,7 +2,7 @@ import { CardBody, Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  margin-top: 30px;
+  margin: 30px 0 20px;
   cursor: pointer;
 `;
 

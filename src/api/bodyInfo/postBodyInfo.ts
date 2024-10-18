@@ -1,7 +1,7 @@
 export const postBodyInfo = async (formData: FormData) => {
   const token = localStorage.getItem('accessToken');
 
-  const response = await fetch('/api/users/bodyInfo', {
+  const response = await fetch('/api/bodyInfos', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

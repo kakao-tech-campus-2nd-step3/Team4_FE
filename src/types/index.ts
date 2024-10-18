@@ -51,3 +51,23 @@ export interface BodyInfo {
   inbodyImageUrl: string;
   createDate: string;
 }
+
+export interface CareerResponse {
+  id: number;
+  career: string;
+}
+
+export interface Preference {
+  sportsId: number;
+  gender: string;
+  range: number;
+  goal: string;
+}
+
+export interface PreferenceResponse {
+  userId: number;
+  name: string;
+  inbodyImageUrl: string;
+  goal: string;
+  profileImageUrl: string;
+}

@@ -8,4 +8,6 @@ export const RouterPath = {
   mypage: '/mypage',
   registerBodyInfo: '/registerBodyInfo',
   registerCareer: '/registerCareer',
+  preference: '/preference',
+  clientFinder: '/clientFinder',
 };

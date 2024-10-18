@@ -17,7 +17,7 @@ export const UserHomePTWrapper = styled.div`
   justify-content: center;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 30px auto;
+  margin: 0px auto;
   width: 90%;
 `;
 
