@@ -1,34 +1,60 @@
-import { Card, Box, Flex, Text } from '@chakra-ui/react';
-import { useProfile } from '@/hooks/useProfile';
+import {
+  Card,
+  Box,
+  Flex,
+  Image,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+} from '@chakra-ui/react';
 import {
   Wrapper,
   StyledCardBody,
   StyledProfileImage,
   StyledNameText,
+  StyledGoalText,
   StyledInbodyButton,
   StyledButton,
 } from './ClientFinder.styles';
-import PTMatchingImage from '@/assets/pulse.png';
+import { PreferenceResponse } from '@/types';
+import { useState } from 'react';
 
-export const ClientFinderProfile = () => {
-  // const profile = useProfile();
+export const ClientFinderProfile = ({
+  preference,
+}: {
+  preference: PreferenceResponse;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // if (!profile) {
-  //   return <p>프로필 정보를 불러오는 중...</p>;
-  // }
+  const openModal = (imageUrl: string) => {
+    setSelectedImage(imageUrl);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <Wrapper>
       <Card>
         <StyledCardBody>
           <Flex align='center'>
-            <StyledProfileImage src={PTMatchingImage} alt='프로필' />
+            <StyledProfileImage src={preference.profileImageUrl} alt='프로필' />
             <Box>
               <Flex align='center'>
-                <StyledNameText>최서린 회원님</StyledNameText>
-                <StyledInbodyButton>인바디</StyledInbodyButton>
+                <StyledNameText>{preference.name} 회원님</StyledNameText>
+                <StyledInbodyButton
+                  onClick={() => openModal(preference.inbodyImageUrl)}
+                >
+                  인바디
+                </StyledInbodyButton>
               </Flex>
-              <Text>한달동안 5kg 체중 감량하기</Text>
+              <StyledGoalText>{preference.goal}</StyledGoalText>
             </Box>
           </Flex>
         </StyledCardBody>
@@ -36,6 +62,15 @@ export const ClientFinderProfile = () => {
         <Flex justify='center'>
           <StyledButton>제안하기</StyledButton>
         </Flex>
+        <Modal isOpen={isOpen} onClose={closeModal}>
+          <ModalContent>
+            <ModalHeader>인바디 이미지</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              {selectedImage && <Image src={selectedImage} alt='인바디' />}
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Card>
     </Wrapper>
   );
