@@ -3,7 +3,7 @@ import { Button, CardBody, Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  margin: 30px 0 20px;
+  margin: 10px 0 10px;
   width: 500px;
 `;
 
@@ -40,6 +40,10 @@ export const StyledInbodyButton = styled(Button)`
   &:hover {
     background-color: #ff467e;
   }
+`;
+
+export const StyledGoalText = styled(Text)`
+  text-align: left;
 `;
 
 export const StyledButton = styled(Button)`
