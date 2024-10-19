@@ -1,10 +1,10 @@
-export const trainerSignup = async (formData: FormData) => {
-  const response = await fetch('/api/auth/trainer/register', {
-    method: 'POST',
-    body: formData,
-  });
+import { fetchAPI } from '..';
 
-  if (response.status !== 201) {
-    throw new Error('회원가입 실패');
-  }
+export const trainerSignup = async (formData: FormData) => {
+  return await fetchAPI({
+    method: 'POST',
+    endpoint: '/auth/trainer/register',
+    body: formData,
+    isFormData: true,
+  });
 };

@@ -1,18 +1,10 @@
 import { Career } from '@/types';
+import { fetchAPI } from '..';
 
 export const postCareer = async (careers: Career[]) => {
-  const token = localStorage.getItem('accessToken');
-
-  const response = await fetch('/api/careers', {
+  return await fetchAPI({
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(careers),
+    endpoint: '/careers',
+    body: careers,
   });
-
-  if (response.status !== 201) {
-    throw new Error('경력 업로드 실패');
-  }
 };

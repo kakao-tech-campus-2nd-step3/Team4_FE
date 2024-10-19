@@ -1,10 +1,10 @@
-export const userSignup = async (formData: FormData) => {
-  const response = await fetch(`/api/auth/user/register`, {
-    method: 'POST',
-    body: formData,
-  });
+import { fetchAPI } from '..';
 
-  if (response.status !== 201) {
-    throw new Error('회원가입 실패');
-  }
+export const userSignup = async (formData: FormData) => {
+  return await fetchAPI({
+    method: 'POST',
+    endpoint: '/auth/user/register',
+    body: formData,
+    isFormData: true,
+  });
 };
