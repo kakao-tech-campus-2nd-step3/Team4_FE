@@ -6,10 +6,18 @@ import {
   StyledImage,
 } from './PTMatching.styles';
 import PTMatchingImage from '@/assets/pulse.png';
+import { useNavigate } from 'react-router-dom';
+import { RouterPath } from '@/routes/path';
 
 export const PTMatching = () => {
+  const navigate = useNavigate();
+
+  const handlePTMatchingClick = () => {
+    navigate(RouterPath.preference);
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handlePTMatchingClick}>
       <Card height='270px'>
         <StyledCardBody>
           <StyledText>PT 매칭하기</StyledText>
