@@ -17,6 +17,8 @@ export const StyledCardBody = styled(CardBody)`
 
 export const StyledProfileImage = styled(Image)`
   width: 80px;
+  border: 1px solid #eeeeee;
+  border-radius: 100%;
 `;
 
 export const StyledNameText = styled(Text)`
