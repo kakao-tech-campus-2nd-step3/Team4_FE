@@ -1,11 +1,13 @@
 import { Card } from '@chakra-ui/react';
+
+import ReviewsImage from '@/assets/invitation.png';
+
 import {
-  Wrapper,
+  StyledCardBody,
   StyledImage,
   StyledText,
-  StyledCardBody,
+  Wrapper,
 } from './ReceivedOffers.styles';
-import ReviewsImage from '@/assets/invitation.png';
 
 export const Reviews = () => {
   return (

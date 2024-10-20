@@ -1,11 +1,13 @@
 import { Card } from '@chakra-ui/react';
-import {
-  Wrapper,
-  StyledCardBody,
-  StyledProfileImage,
-  StyledNameText,
-} from '../../Home/UserHomeProfile.styles';
+
 import { useProfile } from '@/hooks/useProfile';
+
+import {
+  StyledCardBody,
+  StyledNameText,
+  StyledProfileImage,
+  Wrapper,
+} from '../../Home/UserHomeProfile.styles';
 
 export const TrainerMyPageProfile = () => {
   const profile = useProfile();

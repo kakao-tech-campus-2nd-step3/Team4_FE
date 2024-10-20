@@ -1,13 +1,15 @@
 import { Card } from '@chakra-ui/react';
-import {
-  Wrapper,
-  StyledCardBody,
-  StyledText,
-  StyledImage,
-} from './PTMatching.styles';
+import { useNavigate } from 'react-router-dom';
+
 import FindClientImage from '@/assets/runner.png';
 import { RouterPath } from '@/routes/path';
-import { useNavigate } from 'react-router-dom';
+
+import {
+  StyledCardBody,
+  StyledImage,
+  StyledText,
+  Wrapper,
+} from './PTMatching.styles';
 
 export const FindClient = () => {
   const navigate = useNavigate();

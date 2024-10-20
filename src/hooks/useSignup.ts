@@ -1,5 +1,5 @@
-import { userSignup } from '@/api/auth/userSignup';
 import { trainerSignup } from '@/api/auth/trainerSignup';
+import { userSignup } from '@/api/auth/userSignup';
 
 export const useSignup = (registerType: 'user' | 'trainer') => {
   const handleSignup = async (formData: FormData) => {

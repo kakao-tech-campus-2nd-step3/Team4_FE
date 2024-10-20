@@ -1,13 +1,15 @@
-import { Text, Input, FormControl, FormLabel, Button } from '@chakra-ui/react';
+import { Button,FormControl, FormLabel, Input, Text } from '@chakra-ui/react';
+import { useState } from 'react';
+
+import { useLogin } from '@/hooks/useLogin';
+import { LoginData } from '@/types';
+
 import {
-  Wrapper,
+  FormWrapper,
   LoginWrapper,
   TitleWrapper,
-  FormWrapper,
+  Wrapper,
 } from './index.styles';
-import { useState } from 'react';
-import { LoginData } from '@/types';
-import { useLogin } from '@/hooks/useLogin';
 
 export const LoginPage = () => {
   const { handleLogin } = useLogin();

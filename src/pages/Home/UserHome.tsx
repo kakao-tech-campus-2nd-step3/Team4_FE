@@ -1,16 +1,17 @@
+import { MyPT } from '@/components/Home/MyPT';
+import { PTMatching } from '@/components/Home/PTMatching';
+import { ReceivedOffers } from '@/components/Home/ReceivedOffers';
 import { UserHomeProfile } from '@/components/Home/UserHomeProfile';
+
 import {
-  Wrapper,
+  MyPTWrapper,
+  PTMatchingWrapper,
+  ReceivedOffersWrapper,
+  RightWrapper,
   UserHomeProfileWrapper,
   UserHomePTWrapper,
-  PTMatchingWrapper,
-  RightWrapper,
-  MyPTWrapper,
-  ReceivedOffersWrapper,
+  Wrapper,
 } from './UserHome.styles';
-import { PTMatching } from '@/components/Home/PTMatching';
-import { MyPT } from '@/components/Home/MyPT';
-import { ReceivedOffers } from '@/components/Home/ReceivedOffers';
 
 export const UserHomePage = () => {
   return (

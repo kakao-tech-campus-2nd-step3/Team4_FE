@@ -1,6 +1,7 @@
 import { useAuth } from '@/hooks/useAuth';
-import { UserMyPage } from './UserMyPage';
+
 import { TrainerMyPage } from './TrainerMyPage';
+import { UserMyPage } from './UserMyPage';
 
 export const MyPage = () => {
   const { type } = useAuth();

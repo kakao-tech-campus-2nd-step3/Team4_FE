@@ -1,4 +1,5 @@
 import { LoginData } from '@/types';
+
 import { fetchAPI } from '..';
 
 export const userLogin = async ({ email, password }: LoginData) => {

@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
+
 import { getBodyInfo } from '@/api/bodyInfo/getBodyInfo';
 import { postBodyInfo } from '@/api/bodyInfo/postBodyInfo';
 import { RouterPath } from '@/routes/path';
 import { BodyInfo } from '@/types';
-import { useEffect, useState } from 'react';
 
 export const useBodyInfo = () => {
   const [bodyInfo, setBodyInfo] = useState<BodyInfo[]>([]);

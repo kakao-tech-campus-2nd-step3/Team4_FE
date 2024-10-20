@@ -1,13 +1,15 @@
 import { Card } from '@chakra-ui/react';
-import {
-  Wrapper,
-  StyledCardBody,
-  StyledProfileImage,
-  StyledNameText,
-} from './UserHomeProfile.styles';
-import { useProfile } from '@/hooks/useProfile';
 import { useNavigate } from 'react-router-dom';
+
+import { useProfile } from '@/hooks/useProfile';
 import { RouterPath } from '@/routes/path';
+
+import {
+  StyledCardBody,
+  StyledNameText,
+  StyledProfileImage,
+  Wrapper,
+} from './UserHomeProfile.styles';
 
 export const TrainerHomeProfile = () => {
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
-import { colors } from '@/styles/colors';
 import { Button, CardBody, Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+
+import { colors } from '@/styles/colors';
 
 export const Wrapper = styled.div`
   margin: 10px 0 10px;

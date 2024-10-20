@@ -1,16 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { RouterPath } from './path';
-import { HomePage } from '@/pages/Home';
+
 import { Layout } from '@/components/Layout';
-import { SignupPage } from '@/pages/Signup';
-import { UserSignupPage } from '@/pages/Signup/UserSignup';
-import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
-import { LoginPage } from '@/pages/Login';
-import { MyPage } from '@/pages/MyPage';
 import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
-import { PreferencePage } from '@/pages/Preference';
 import { ClientFinder } from '@/pages/Clients/ClientFinder';
+import { HomePage } from '@/pages/Home';
+import { LoginPage } from '@/pages/Login';
+import { MyPage } from '@/pages/MyPage';
+import { PreferencePage } from '@/pages/Preference';
+import { SignupPage } from '@/pages/Signup';
+import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
+import { UserSignupPage } from '@/pages/Signup/UserSignup';
+
+import { RouterPath } from './path';
 
 const router = createBrowserRouter([
   {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import { getUserProfile } from '@/api/profile/getUserProfile';
+
 import { getTrainerProfile } from '@/api/profile/getTrainerProfile';
+import { getUserProfile } from '@/api/profile/getUserProfile';
+import { useAuth } from '@/hooks/useAuth';
 import { TrainerProfile, UserProfile } from '@/types';
 
 export const useProfile = () => {

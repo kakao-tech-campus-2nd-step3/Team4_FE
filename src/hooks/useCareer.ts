@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { getCareer } from '@/api/career/getCareer';
 import { postCareer } from '@/api/career/postCareer';
 import { Career, CareerResponse } from '@/types';
-import { useEffect, useState } from 'react';
 
 export const useCareer = () => {
   const [careers, setCareers] = useState<CareerResponse[]>([]);

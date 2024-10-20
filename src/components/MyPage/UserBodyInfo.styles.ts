@@ -1,6 +1,7 @@
-import { colors } from '@/styles/colors';
 import { Box, Button, Card, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+
+import { colors } from '@/styles/colors';
 
 export const StyledCard = styled(Card)`
   margin: 20px 0px;

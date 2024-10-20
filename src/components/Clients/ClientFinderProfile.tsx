@@ -1,25 +1,27 @@
 import {
-  Card,
   Box,
+  Card,
   Flex,
   Image,
   Modal,
+  ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalCloseButton,
-  ModalBody,
 } from '@chakra-ui/react';
+import { useState } from 'react';
+
+import { PreferenceResponse } from '@/types';
+
 import {
-  Wrapper,
+  StyledButton,
   StyledCardBody,
-  StyledProfileImage,
-  StyledNameText,
   StyledGoalText,
   StyledInbodyButton,
-  StyledButton,
+  StyledNameText,
+  StyledProfileImage,
+  Wrapper,
 } from './ClientFinderProfile.styles';
-import { PreferenceResponse } from '@/types';
-import { useState } from 'react';
 
 export const ClientFinderProfile = ({
   preference,

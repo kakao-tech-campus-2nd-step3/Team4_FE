@@ -1,6 +1,7 @@
-import { usePreference } from '@/hooks/usePreference';
-import { Wrapper, StyledText, StyledDefaultText } from './ClientFinder.styles';
 import { ClientFinderProfile } from '@/components/Clients/ClientFinderProfile';
+import { usePreference } from '@/hooks/usePreference';
+
+import { StyledDefaultText,StyledText, Wrapper } from './ClientFinder.styles';
 
 export const ClientFinder = () => {
   const { preferences } = usePreference();

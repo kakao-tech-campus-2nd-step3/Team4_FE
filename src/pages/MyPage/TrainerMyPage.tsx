@@ -1,8 +1,10 @@
-import { TrainerMyPageProfile } from '@/components/MyPage/Profile/TrainerMyPageProfile';
-import { StyledButton, Wrapper } from './TrainerMyPage.styles';
 import { useNavigate } from 'react-router-dom';
-import { RouterPath } from '@/routes/path';
+
+import { TrainerMyPageProfile } from '@/components/MyPage/Profile/TrainerMyPageProfile';
 import { TrainerCareer } from '@/components/MyPage/TrainerCareer';
+import { RouterPath } from '@/routes/path';
+
+import { StyledButton, Wrapper } from './TrainerMyPage.styles';
 
 export const TrainerMyPage = () => {
   const navigate = useNavigate();

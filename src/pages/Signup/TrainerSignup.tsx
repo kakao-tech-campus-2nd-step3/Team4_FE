@@ -1,16 +1,18 @@
 import {
-  Text,
-  Input,
+  Button,
   FormControl,
   FormLabel,
-  Button,
+  Input,
   Select,
+  Text,
 } from '@chakra-ui/react';
-import { Wrapper, TitleWrapper, FormWrapper } from './TrainerSignup.styles';
-import { useSignup } from '@/hooks/useSignup';
 import { useState } from 'react';
-import { TrainerSignupFormData } from '@/types';
 import { useNavigate } from 'react-router-dom';
+
+import { useSignup } from '@/hooks/useSignup';
+import { TrainerSignupFormData } from '@/types';
+
+import { FormWrapper,TitleWrapper, Wrapper } from './TrainerSignup.styles';
 
 export const TrainerSignupPage = () => {
   const navigate = useNavigate();

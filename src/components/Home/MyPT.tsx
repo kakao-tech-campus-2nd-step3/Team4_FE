@@ -1,11 +1,13 @@
 import { Card } from '@chakra-ui/react';
-import {
-  Wrapper,
-  StyledImage,
-  StyledCardBody,
-  StyledText,
-} from './MyPT.styles';
+
 import MyPTImage from '@/assets/date.png';
+
+import {
+  StyledCardBody,
+  StyledImage,
+  StyledText,
+  Wrapper,
+} from './MyPT.styles';
 
 export const MyPT = () => {
   return (

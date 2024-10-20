@@ -1,13 +1,19 @@
 import {
-  Input,
+  Button,
+  Divider,
   FormControl,
   FormLabel,
-  Button,
+  Input,
   Select,
-  Divider,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { RegisterInbodyButton } from '@/components/Common/RegisterInbodyButton';
+import { usePreference } from '@/hooks/usePreference';
+import { RouterPath } from '@/routes/path';
 import { Preference } from '@/types';
+
 import {
   FormWrapper,
   StyledInbodyText,
@@ -15,10 +21,6 @@ import {
   TitleWrapper,
   Wrapper,
 } from './index.styles';
-import { RegisterInbodyButton } from '@/components/Common/RegisterInbodyButton';
-import { usePreference } from '@/hooks/usePreference';
-import { useNavigate } from 'react-router-dom';
-import { RouterPath } from '@/routes/path';
 
 export const PreferencePage = () => {
   const navigate = useNavigate();

@@ -1,9 +1,11 @@
-import { LoginData } from '@/types';
-import { userLogin } from '@/api/auth/userLogin';
-import { trainerLogin } from '@/api/auth/trainerLogin';
-import { useAuth } from './useAuth';
 import { useNavigate } from 'react-router-dom';
+
+import { trainerLogin } from '@/api/auth/trainerLogin';
+import { userLogin } from '@/api/auth/userLogin';
 import { RouterPath } from '@/routes/path';
+import { LoginData } from '@/types';
+
+import { useAuth } from './useAuth';
 
 export const useLogin = () => {
   const { setAuth } = useAuth();

@@ -1,14 +1,16 @@
-import { RouterPath } from '@/routes/path';
 import { CardBody } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+
+import { RouterPath } from '@/routes/path';
+
 import {
-  Wrapper,
-  TitleText,
-  TypeWrapper,
   CardWrapper,
+  DescriptionText,
   EmojiText,
   RoleText,
-  DescriptionText,
+  TitleText,
+  TypeWrapper,
+  Wrapper,
 } from './index.styles';
 
 export const SignupPage = () => {

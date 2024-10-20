@@ -1,5 +1,7 @@
-import { RouterPath } from '@/routes/path';
 import { useNavigate } from 'react-router-dom';
+
+import { RouterPath } from '@/routes/path';
+
 import { StyledButton } from './RegisterInbodyButton.styles';
 
 export const RegisterInbodyButton = () => {

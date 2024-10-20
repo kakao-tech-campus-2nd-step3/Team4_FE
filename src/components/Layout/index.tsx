@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
+
 import { Header } from './Header';
-import { Wrapper, InnerWrapper } from './index.styles';
+import { InnerWrapper,Wrapper } from './index.styles';
 
 export const Layout = () => (
   <Wrapper>

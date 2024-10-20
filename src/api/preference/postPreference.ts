@@ -1,4 +1,5 @@
 import { Preference } from '@/types';
+
 import { fetchAPI } from '..';
 
 export const postPreference = async (preference: Preference) => {

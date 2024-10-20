@@ -1,17 +1,19 @@
-import LogoImage from '@/assets/linkfit_logo.png';
-import { Link } from 'react-router-dom';
 import { Text } from '@chakra-ui/react';
-import { RouterPath } from '@/routes/path';
-import {
-  Wrapper,
-  StyledChatIcon,
-  Logo,
-  UserWrapper,
-  StyledLink,
-  StyledButton,
-} from './Header.styles';
+import { Link } from 'react-router-dom';
+
+import LogoImage from '@/assets/linkfit_logo.png';
 import { useAuth } from '@/hooks/useAuth';
 import { useLogout } from '@/hooks/useLogout';
+import { RouterPath } from '@/routes/path';
+
+import {
+  Logo,
+  StyledButton,
+  StyledChatIcon,
+  StyledLink,
+  UserWrapper,
+  Wrapper,
+} from './Header.styles';
 
 export const Header = () => {
   const { isAuthenticated } = useAuth();

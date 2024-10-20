@@ -1,4 +1,4 @@
-import { Image, Text, CardBody } from '@chakra-ui/react';
+import { CardBody, Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div``;

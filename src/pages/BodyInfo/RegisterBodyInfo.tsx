@@ -1,5 +1,9 @@
+import { PlusSquareIcon } from '@chakra-ui/icons';
 import { Box, Icon, Image } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
+
+import { useBodyInfo } from '@/hooks/useBodyInfo';
+
 import {
   FileWrapper,
   StyledFileButton,
@@ -9,8 +13,6 @@ import {
   StyledUploadButton,
   Wrapper,
 } from './RegisterBodyInfo.styles';
-import { PlusSquareIcon } from '@chakra-ui/icons';
-import { useBodyInfo } from '@/hooks/useBodyInfo';
 
 export const RegisterBodyInfo = () => {
   const { handleUploadBodyInfo } = useBodyInfo();

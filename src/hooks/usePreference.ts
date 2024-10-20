@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { getPreference } from '@/api/preference/getPreference';
 import { postPreference } from '@/api/preference/postPreference';
 import { Preference, PreferenceResponse } from '@/types';
-import { useEffect, useState } from 'react';
 
 export const usePreference = () => {
   const [preferences, setPreferences] = useState<PreferenceResponse[]>([]);

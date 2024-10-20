@@ -1,20 +1,22 @@
-import { useState } from 'react';
 import {
+  Image,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
   ModalBody,
   ModalCloseButton,
-  Image,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
 } from '@chakra-ui/react';
+import { useState } from 'react';
+
 import { useBodyInfo } from '@/hooks/useBodyInfo';
+
 import {
+  HistoryBox,
   StyledButton,
   StyledCard,
-  HistoryBox,
-  StyledDefaultText,
   StyledDateText,
+  StyledDefaultText,
   StyledTitleText,
 } from './UserBodyInfo.styles';
 export const UserBodyInfo = () => {

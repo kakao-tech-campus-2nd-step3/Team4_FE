@@ -1,6 +1,7 @@
-import styled from '@emotion/styled';
 import { ChatIcon } from '@chakra-ui/icons';
+import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+
 import Z_INDEX from '@/styles/z-index';
 
 export const HEADER_HEIGHT = '54px';

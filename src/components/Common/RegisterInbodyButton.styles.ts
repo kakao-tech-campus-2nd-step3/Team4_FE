@@ -1,6 +1,7 @@
-import { colors } from '@/styles/colors';
 import { Button } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+
+import { colors } from '@/styles/colors';
 
 export const StyledButton = styled(Button)`
   background-color: ${colors.mainColor};

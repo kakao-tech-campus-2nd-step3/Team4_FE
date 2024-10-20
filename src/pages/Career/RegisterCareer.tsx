@@ -1,5 +1,12 @@
+import { AddIcon } from '@chakra-ui/icons';
 import { Box, Button, Icon, Input } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { useCareer } from '@/hooks/useCareer';
+import { RouterPath } from '@/routes/path';
+import { Career } from '@/types';
+
 import {
   StyledAddButton,
   StyledInput,
@@ -8,11 +15,6 @@ import {
   StyledUploadButton,
   Wrapper,
 } from './RegisterCareer.styles';
-import { AddIcon } from '@chakra-ui/icons';
-import { Career } from '@/types';
-import { useCareer } from '@/hooks/useCareer';
-import { useNavigate } from 'react-router-dom';
-import { RouterPath } from '@/routes/path';
 
 export const RegisterCareer = () => {
   const navigate = useNavigate();

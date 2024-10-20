@@ -1,6 +1,7 @@
 import { useAuth } from '@/hooks/useAuth';
-import { UserHomePage } from './UserHome';
+
 import { TrainerHomePage } from './TrainerHome';
+import { UserHomePage } from './UserHome';
 
 export const HomePage = () => {
   const { isAuthenticated, type } = useAuth();
