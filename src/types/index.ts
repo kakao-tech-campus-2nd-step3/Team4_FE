@@ -71,3 +71,16 @@ export interface PreferenceResponse {
   goal: string;
   profileImageUrl: string;
 }
+
+export interface ChattingList {
+  roomId: number;
+  personId: number;
+  personName: string;
+  personProfileImageUrl: string;
+}
+
+export interface Message {
+  roomId: number;
+  content: string;
+  sender: string;
+}

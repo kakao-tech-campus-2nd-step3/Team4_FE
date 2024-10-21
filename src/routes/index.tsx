@@ -11,6 +11,7 @@ import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
 import { PreferencePage } from '@/pages/Preference';
 import { ClientFinder } from '@/pages/Clients/ClientFinder';
+import {ChattingList} from "@/pages/Chat/ChattingList";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.clientFinder,
         element: <ClientFinder />,
+      },
+      {
+        path: RouterPath.chattingList,
+        element: <ChattingList />,
       },
     ],
   },

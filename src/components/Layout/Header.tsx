@@ -19,7 +19,9 @@ export const Header = () => {
 
   return (
     <Wrapper>
-      <StyledChatIcon />
+      <Link to={RouterPath.chattingList}>
+        <StyledChatIcon />
+      </Link>
       <Link to={RouterPath.home}>
         <Logo src={LogoImage} alt='logo' />
       </Link>
