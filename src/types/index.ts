@@ -47,7 +47,7 @@ export interface Career {
 }
 
 export interface BodyInfo {
-  infoId: number;
+  id: number;
   inbodyImageUrl: string;
   createDate: string;
 }

@@ -41,7 +41,7 @@ export const UserBodyInfo = () => {
         <StyledDefaultText>등록된 인바디 이미지가 없습니다.</StyledDefaultText>
       ) : (
         bodyInfo.map((info) => (
-          <HistoryBox key={info.infoId}>
+          <HistoryBox key={info.id}>
             <StyledDateText>
               {new Date(info.createDate).toLocaleDateString()}
             </StyledDateText>
