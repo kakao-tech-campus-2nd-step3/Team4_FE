@@ -10,12 +10,18 @@ import {
 } from "@chakra-ui/react";
 import {StyledCardBody, StyledProfileImage} from "@/components/Chat/ChattingRoomList.styles";
 import {ChattingList} from "@/types";
+import {RouterPath} from "@/routes/path";
+import {useNavigate} from "react-router-dom";
 
 export const ChattingRoomList = ({
   chattingRoom,
 }: {
   chattingRoom: ChattingList;
 }) => {
+  const navigate = useNavigate();
+  const navigateToChattingRoom = () => {
+    navigate(RouterPath.chattingRoom);
+  };
   return (
       <Wrapper>
         <Card>
@@ -31,7 +37,9 @@ export const ChattingRoomList = ({
           </StyledCardBody>
 
           <Flex justify='center'>
-            <StyledButton>채팅하기</StyledButton>
+            <StyledButton type='button' onClick={navigateToChattingRoom}>
+              채팅하기
+            </StyledButton>
           </Flex>
         </Card>
       </Wrapper>

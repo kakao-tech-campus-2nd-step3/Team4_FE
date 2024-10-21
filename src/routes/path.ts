@@ -10,5 +10,6 @@ export const RouterPath = {
   registerCareer: '/registerCareer',
   preference: '/preference',
   clientFinder: '/clientFinder',
-  chattingList: '/chats'
+  chattingList: '/chats',
+  chattingRoom: '/chattingRoom',
 };
