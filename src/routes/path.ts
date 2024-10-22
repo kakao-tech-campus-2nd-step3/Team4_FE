@@ -10,5 +10,5 @@ export const RouterPath = {
   registerCareer: '/registerCareer',
   preference: '/preference',
   clientFinder: '/clientFinder',
-  proposal: '/proposal',
+  proposal: '/proposal/:userId',
 };
