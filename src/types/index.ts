@@ -73,7 +73,7 @@ export interface PreferenceResponse {
 }
 
 export interface ChattingList {
-  roomId: number;
+  Id: number;
   personId: number;
   personName: string;
   personProfileImageUrl: string;
@@ -83,4 +83,5 @@ export interface Message {
   roomId: number;
   content: string;
   sender: string;
+  timestamp: string;
 }

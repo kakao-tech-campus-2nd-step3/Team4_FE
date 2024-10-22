@@ -11,7 +11,8 @@ import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
 import { PreferencePage } from '@/pages/Preference';
 import { ClientFinder } from '@/pages/Clients/ClientFinder';
-import {ChattingList} from "@/pages/Chat/ChattingList";
+import { ChattingList } from "@/pages/Chat/ChattingList";
+import { ChattingRoom } from "@/pages/Chat/ChattingRoom";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.chattingList,
         element: <ChattingList />,
+      },
+      {
+        path: `${RouterPath.chattingRoom}/:roomId`, // This should match /chat/1
+        element: <ChattingRoom />,
       },
     ],
   },
