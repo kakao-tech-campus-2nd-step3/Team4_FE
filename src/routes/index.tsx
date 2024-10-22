@@ -8,6 +8,7 @@ import { HomePage } from '@/pages/Home';
 import { LoginPage } from '@/pages/Login';
 import { MyPage } from '@/pages/MyPage';
 import { PreferencePage } from '@/pages/Preference';
+import { ProposalPage } from '@/pages/Proposal/ProposalPage';
 import { SignupPage } from '@/pages/Signup';
 import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.clientFinder,
         element: <ClientFinder />,
+      },
+      {
+        path: RouterPath.proposal,
+        element: <ProposalPage />,
       },
     ],
   },
