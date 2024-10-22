@@ -71,3 +71,9 @@ export interface PreferenceResponse {
   goal: string;
   profileImageUrl: string;
 }
+
+export interface Proposal {
+  userId: number;
+  totalCount: number;
+  price: number;
+}
