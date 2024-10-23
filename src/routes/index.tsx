@@ -14,6 +14,7 @@ import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
 
 import { RouterPath } from './path';
+import { ProposalHistory } from '@/pages/Proposal/ProposalHistory';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.proposal,
         element: <ProposalPage />,
+      },
+      {
+        path: RouterPath.proposalHistory,
+        element: <ProposalHistory />,
       },
     ],
   },
