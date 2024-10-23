@@ -1,7 +1,9 @@
 import { CardBody, Image, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  cursor: pointer;
+`;
 
 export const StyledCardBody = styled(CardBody)`
   position: relative;
