@@ -8,8 +8,13 @@ import {
   StyledStatusText,
 } from './ProposalUserProfile.styles';
 import imageUrl from '@/assets/date.png';
+import { TrainerProposalResponse } from '@/types';
 
-export const ProposalUserProfile = () => {
+export const ProposalUserProfile = ({
+  proposal,
+}: {
+  proposal: TrainerProposalResponse;
+}) => {
   return (
     <Wrapper>
       <Card>
@@ -17,11 +22,15 @@ export const ProposalUserProfile = () => {
           <Flex align='center'>
             <StyledProfileImage src={imageUrl} alt='프로필' />
             <Box>
-              <StyledNameText>최서린 회원님</StyledNameText>
-              <StyledProposalText>10회 60만원</StyledProposalText>
+              <StyledNameText>{proposal.userName} 회원님</StyledNameText>
+              <StyledProposalText>
+                {/* TODO : 가격 부분 자연스럽게 수정 */}
+                {proposal.totalCount}회 {proposal.price}원
+              </StyledProposalText>
             </Box>
           </Flex>
-          <StyledStatusText>대기중</StyledStatusText>
+          {/* TODO : status 변수로 관리 */}
+          <StyledStatusText>{proposal.status}</StyledStatusText>
         </StyledCardBody>
       </Card>
     </Wrapper>
