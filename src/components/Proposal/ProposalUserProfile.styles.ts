@@ -40,7 +40,7 @@ export const StyledProposalText = styled(Text)`
 export const StyledStatusText = styled(Text)`
   position: absolute;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   bottom: 15px;
   right: 25px;
   color: ${colors.mainColor};
