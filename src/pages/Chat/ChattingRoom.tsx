@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
 import { Client } from '@stomp/stompjs';
-import { Message } from "@/types";
-import { useAuth } from "@/hooks/useAuth";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  Wrapper,
-  InputWrapper,
-} from './ChattingRoom.styles';
+
 import { ChattingMessage } from "@/components/Chat/ChattingMessage";
+import { useAuth } from "@/hooks/useAuth";
+import { Message } from "@/types";
+
+import {
+  InputWrapper,
+  Wrapper,
+} from './ChattingRoom.styles';
 
 export const ChattingRoom = () => {
   const { id } = useParams<{ id: string }>();

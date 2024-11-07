@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { RouterPath } from '@/routes/path';
 import { UserProposalResponse } from '@/types';
 
+import { ChattingButton } from '../Chat/ChattingButton';
 import {
   StyledButtonWrapper,
   StyledCardBody,
-  StyledChatButton,
   StyledGymText,
   StyledNameText,
   StyledProfileImage,
@@ -45,9 +45,9 @@ export const ProposalTrainerProfile = ({
             </Box>
           </Flex>
 
-          <StyledButtonWrapper>
+          <StyledButtonWrapper onClick={(e) => e.stopPropagation()}>
             <StyledReviewButton>리뷰 보기</StyledReviewButton>
-            <StyledChatButton>채팅하기</StyledChatButton>
+            <ChattingButton opponentId={proposal.trainerId}/>
           </StyledButtonWrapper>
         </StyledCardBody>
       </Card>

@@ -1,6 +1,8 @@
 import { Flex } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 import { usePt } from '@/hooks/usePt';
+import { RouterPath } from '@/routes/path';
 
 import {
   StyledButton,
@@ -12,8 +14,6 @@ import {
   StyledTitleText,
   Wrapper,
 } from './LinkedClients.styles';
-import { RouterPath } from '@/routes/path';
-import { useNavigate } from 'react-router-dom';
 
 export const LinkedClients = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
-import {StyledDefaultText, StyledText, Wrapper} from "@/pages/Chat/ChattingList.styles";
-import {useChattingList} from "@/hooks/useChattingList";
 import {ChattingRoomList} from "@/components/Chat/ChattingRoomList";
+import {useChattingList} from "@/hooks/useChattingList";
+import {StyledDefaultText, StyledText, Wrapper} from "@/pages/Chat/ChattingList.styles";
 
 export const ChattingList = () => {
   const { chattingLists } = useChattingList();

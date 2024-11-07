@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import Z_INDEX from '@/styles/z-index';
 
 export const FOOTER_HEIGHT = '54px';

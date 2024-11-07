@@ -1,11 +1,11 @@
 import {
-  Wrapper,
+  AlignWrapper,
   StyledMessageBody,
   Timestamp,
-  AlignWrapper,
+  Wrapper,
 } from "@/components/Chat/ChattingMessage.style";
-import { useMessage } from '@/hooks/useMessage';
 import { useAuth } from '@/hooks/useAuth';
+import { useMessage } from '@/hooks/useMessage';
 import { Message } from "@/types";
 
 export const ChattingMessage = ({

@@ -1,20 +1,18 @@
-import {ChattingList} from "@/types";
-import {
-  Card,
-  Box,
-  Flex,
-} from '@chakra-ui/react';
-import {
-  Wrapper,
-  StyledCardBody,
-  StyledProfileImage,
-  StyledNameText,
-  StyledLastMessage,
-  TextWrapper,
-} from './ChattingRoomList.styles';
-import {RouterPath} from "@/routes/path";
-import {useNavigate} from "react-router-dom";
+import { Card } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
+
 import { useAuth } from '@/hooks/useAuth';
+import { RouterPath } from "@/routes/path";
+import { ChattingList } from "@/types";
+
+import {
+  StyledCardBody,
+  StyledLastMessage,
+  StyledNameText,
+  StyledProfileImage,
+  TextWrapper,
+  Wrapper,
+} from './ChattingRoomList.styles';
 
 export const ChattingRoomList = ({
   chattingList,

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import {ChattingList} from "@/types";
+
 import {getChattingList} from "@/api/chat/getChattingList";
+import {ChattingList} from "@/types";
 
 export const useChattingList = () => {
   const [chattingLists, setChattingList] = useState<ChattingList[]>([]);
