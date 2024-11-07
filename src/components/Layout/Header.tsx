@@ -21,7 +21,9 @@ export const Header = () => {
 
   return (
     <Wrapper>
-      <StyledChatIcon />
+      <Link to={RouterPath.chatting}>
+        <StyledChatIcon />
+      </Link>
       <Link to={RouterPath.home}>
         <Logo src={LogoImage} alt='logo' />
       </Link>
