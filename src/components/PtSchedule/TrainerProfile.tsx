@@ -1,6 +1,6 @@
 import { Card, Flex } from '@chakra-ui/react';
 
-import { usePtProfile } from '@/hooks/usePtProfile';
+import { usePtDetail } from '@/hooks/usePtDetail';
 
 import {
   StyledCardBody,
@@ -10,11 +10,12 @@ import {
   StyledProfileImage,
   Wrapper,
 } from './TrainerProfile.styles';
+import { UserPtDetail } from '@/types';
 
 export const TrainerProfile = () => {
-  const { trainerProfile } = usePtProfile();
+  const { ptDetail } = usePtDetail<UserPtDetail>();
 
-  if (!trainerProfile) {
+  if (!ptDetail) {
     return <p>프로필 정보를 불러오는 중...</p>;
   }
 
@@ -23,15 +24,12 @@ export const TrainerProfile = () => {
       <Card>
         <StyledCardBody>
           <Flex>
-            <StyledProfileImage
-              src={trainerProfile.profileImageUrl}
-              alt='프로필'
-            />
-            <Flex direction='column'>
+            <StyledProfileImage src={ptDetail.profileImageUrl} alt='프로필' />
+            <Flex direction='column' alignItems='flex-start'>
               <StyledNameText mt='15px'>
-                {trainerProfile.trainerName} 트레이너
+                {ptDetail.trainerName} 트레이너
               </StyledNameText>
-              <StyledGymText>소속 : {trainerProfile.gymName}</StyledGymText>
+              <StyledGymText>소속 : {ptDetail.gymName}</StyledGymText>
             </Flex>
           </Flex>
           <StyledChatButton>1:1 채팅</StyledChatButton>

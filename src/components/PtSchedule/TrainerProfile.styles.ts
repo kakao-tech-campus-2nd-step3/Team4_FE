@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { colors } from '@/styles/colors';
 
 export const Wrapper = styled.div`
+  width: 90%;
   margin: 30px 0 20px;
 `;
 
@@ -20,7 +21,6 @@ export const StyledProfileImage = styled(Image)`
   width: 80px;
   border: 1px solid #eeeeee;
   border-radius: 100%;
-  margin-top: 10px;
   margin-right: 20px;
 `;
 
@@ -32,7 +32,6 @@ export const StyledNameText = styled(Text)`
 export const StyledGymText = styled(Text)`
   font-weight: 500;
   font-size: 14px;
-  margin-top: 8px;
 `;
 
 export const StyledChatButton = styled(Button)`

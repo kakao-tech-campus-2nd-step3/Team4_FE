@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { RegisterBodyInfo } from '@/pages/BodyInfo/RegisterBodyInfo';
 import { RegisterCareer } from '@/pages/Career/RegisterCareer';
+import { ChattingList } from '@/pages/Chat/ChattingList';
+import { ChattingRoom } from '@/pages/Chat/ChattingRoom';
 import { ClientFinder } from '@/pages/Clients/ClientFinder';
 import { HomePage } from '@/pages/Home';
 import { LoginPage } from '@/pages/Login';
@@ -18,6 +20,7 @@ import { TrainerSignupPage } from '@/pages/Signup/TrainerSignup';
 import { UserSignupPage } from '@/pages/Signup/UserSignup';
 
 import { RouterPath } from './path';
+import { TrainerPtSchedulePage } from '@/pages/PtSchedule/TrainerPtSchedule';
 
 const router = createBrowserRouter([
   {
@@ -83,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: RouterPath.userPtSchedule,
         element: <UserPtSchedulePage />,
+      },
+      {
+        path: RouterPath.trainerPtSchedule,
+        element: <TrainerPtSchedulePage />,
       },
     ],
   },
