@@ -8,6 +8,16 @@ export const Wrapper = styled.div`
   margin: 50px 0;
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+`;
+
+export const StyledTitleText = styled(Text)`
+  font-size: 24px;
+  font-weight: 700;
+  margin: 13px 0 20px 8px;
+`;
+
 export const StyledText = styled(Text)`
   font-size: 24px;
   font-weight: 600;

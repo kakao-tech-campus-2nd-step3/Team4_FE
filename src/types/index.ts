@@ -131,3 +131,18 @@ export interface Schedule {
   isCompleted: string;
   date: string;
 }
+
+export interface ChattingList {
+  id: number;
+  memberName: string;
+  memberProfileImageUrl: string;
+  lastMessage?: string;
+  lastSender?: string;
+}
+
+export interface Message {
+  roomId: number;
+  content: string;
+  sender: string;
+  date: string;
+}
