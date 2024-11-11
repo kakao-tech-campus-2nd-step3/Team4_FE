@@ -29,11 +29,6 @@ export const StyledNameText = styled(Text)`
   font-size: 20px;
 `;
 
-export const StyledGymText = styled(Text)`
-  font-weight: 500;
-  font-size: 14px;
-`;
-
 export const StyledChatButton = styled(Button)`
   background-color: ${colors.mainColor};
   color: ${colors.white};

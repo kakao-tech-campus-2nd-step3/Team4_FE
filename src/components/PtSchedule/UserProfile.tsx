@@ -1,19 +1,22 @@
 import { Card, Flex } from '@chakra-ui/react';
+import { useParams } from 'react-router-dom';
 
 import { usePtDetail } from '@/hooks/usePtDetail';
-import { UserPtDetail } from '@/types';
+import { TrainerPtDetail } from '@/types';
 
 import {
   StyledCardBody,
   StyledChatButton,
-  StyledGymText,
   StyledNameText,
   StyledProfileImage,
   Wrapper,
-} from './TrainerProfile.styles';
+} from './UserProfile.styles';
 
-export const TrainerProfile = () => {
-  const { ptDetail } = usePtDetail<UserPtDetail>();
+export const UserProfile = () => {
+  const { ptId } = useParams();
+  const numberPtId = ptId ? parseInt(ptId, 10) : 0;
+
+  const { ptDetail } = usePtDetail<TrainerPtDetail>(numberPtId);
 
   if (!ptDetail) {
     return <p>프로필 정보를 불러오는 중...</p>;
@@ -23,14 +26,9 @@ export const TrainerProfile = () => {
     <Wrapper>
       <Card>
         <StyledCardBody>
-          <Flex>
+          <Flex alignItems='center'>
             <StyledProfileImage src={ptDetail.profileImageUrl} alt='프로필' />
-            <Flex direction='column' alignItems='flex-start'>
-              <StyledNameText mt='15px'>
-                {ptDetail.trainerName} 트레이너
-              </StyledNameText>
-              <StyledGymText>소속 : {ptDetail.gymName}</StyledGymText>
-            </Flex>
+            <StyledNameText>{ptDetail.userName} 회원</StyledNameText>
           </Flex>
           <StyledChatButton>1:1 채팅</StyledChatButton>
         </StyledCardBody>

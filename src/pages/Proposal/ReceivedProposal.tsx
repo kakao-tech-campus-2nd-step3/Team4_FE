@@ -21,7 +21,7 @@ export const ReceivedProposal = () => {
           <ProposalTrainerProfile key={proposal.ptId} proposal={proposal} />
         ))
       ) : (
-        <Text>아직 제안한 회원이 없습니다.</Text>
+        <Text>아직 제안한 트레이너가 없습니다.</Text>
       )}
     </Wrapper>
   );

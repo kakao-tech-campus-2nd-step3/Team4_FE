@@ -111,10 +111,24 @@ export interface LinkedClients {
   profileImageUrl: string;
 }
 
-export interface PtTrainerProfile {
+export interface UserPtDetail {
   trainerId: number;
   trainerName: string;
   gymName: string;
   count: number;
   profileImageUrl: string;
+  schedules: Schedule[];
+}
+
+export interface TrainerPtDetail {
+  userId: number;
+  userName: string;
+  profileImageUrl: string;
+  schedules: Schedule[];
+}
+
+export interface Schedule {
+  scheduleId: number;
+  isCompleted: string;
+  date: string;
 }

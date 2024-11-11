@@ -1,6 +1,7 @@
 import { Card } from '@chakra-ui/react';
 
 import { useProfile } from '@/hooks/useProfile';
+import { getDisplayGender, Profile } from '@/utils/getDisplayGender';
 
 import {
   StyledCardBody,
@@ -21,17 +22,7 @@ export const TrainerProfile = ({ trainerId }: TrainerProfileProps) => {
     return <p>프로필 정보를 불러오는 중...</p>;
   }
 
-  let displayGender = '성별 정보 없음';
-
-  // TODO : 추후 utils 함수로 분리
-  if ('gender' in profile) {
-    displayGender =
-      profile.gender === 'MALE'
-        ? '남'
-        : profile.gender === 'FEMALE'
-          ? '여'
-          : '성별 정보 없음';
-  }
+  const displayGender = getDisplayGender(profile as Profile);
 
   return (
     <Wrapper>

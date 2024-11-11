@@ -1,6 +1,8 @@
 import { Flex } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 import { usePt } from '@/hooks/usePt';
+import { RouterPath } from '@/routes/path';
 
 import {
   StyledButton,
@@ -14,7 +16,12 @@ import {
 } from './LinkedClients.styles';
 
 export const LinkedClients = () => {
+  const navigate = useNavigate();
   const { linkedClients } = usePt();
+
+  const navigateToPt = (ptId: number) => {
+    navigate(RouterPath.trainerPtSchedule.replace(':ptId', ptId.toString()));
+  };
 
   return (
     <Wrapper>
@@ -24,7 +31,10 @@ export const LinkedClients = () => {
           <StyledDefaultText>PT가 성사된 회원이 없습니다.</StyledDefaultText>
         ) : (
           linkedClients.map((linkedClient) => (
-            <StyledProfileCard key={linkedClient.id}>
+            <StyledProfileCard
+              key={linkedClient.id}
+              onClick={() => navigateToPt(linkedClient.id)}
+            >
               <Flex justify='left' align='center' position='relative'>
                 <StyledProfileImage
                   src={linkedClient.profileImageUrl}
