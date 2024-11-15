@@ -24,7 +24,7 @@ export const ChattingRoom = () => {
 
   useEffect(() => {
     const client = new Client({
-      brokerURL: 'ws://localhost:8080/ws-stomp',
+      brokerURL: 'ws://100.27.210.128:8080/ws-stomp',
       onConnect: (frame) => {
         setConnected(true);
         console.log('Connected: ' + frame);
