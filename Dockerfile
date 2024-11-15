@@ -6,6 +6,7 @@ COPY package.json ./
 
 ENV NODE_OPTIONS="--max-old-space-size=2048"
 RUN npm install
+RUN npm install react-icons
 
 COPY . .
 
